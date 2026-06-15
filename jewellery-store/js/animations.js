@@ -1,5 +1,14 @@
 /* Aurelia Fine Jewellery - Animations & Micro-interactions JS */
 
+// Parse current product ID immediately for pages that need it
+if (window.location.search) {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = urlParams.get("id");
+    if (productId) {
+        window.currentProductId = productId;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Parallax Scroll Effect for Hero Images
     const heroImage = document.querySelector('#hero-slider img');
@@ -47,14 +56,22 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Extract item metadata from card attributes
             const card = wishlistBtn.closest('.luxury-card') || wishlistBtn.closest('.group');
-            if (card && icon) {
-                const name = card.querySelector('h4, h3').textContent.trim();
+            let item = null;
+            let name = '';
+            
+            if (card) {
+                name = card.querySelector('h4, h3').textContent.trim();
                 const price = card.querySelector('.font-price-display').textContent.trim();
                 const img = card.querySelector('img').src;
                 const meta = card.querySelector('.font-label-caps')?.textContent.trim() || '18K GOLD';
+                item = { name, price, img, meta };
+            } else if (window.currentProductId && window.AureliaProducts[window.currentProductId]) {
+                const prod = window.AureliaProducts[window.currentProductId];
+                name = prod.name;
+                item = { id: window.currentProductId };
+            }
 
-                const item = { name, price, img, meta };
-
+            if (item && icon) {
                 if (window.AureliaState) {
                     window.AureliaState.toggleWishlist(item);
                     
@@ -82,6 +99,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     });
+
+    // Sync product detail page wishlist button state
+    if (window.currentProductId && window.AureliaProducts[window.currentProductId] && window.AureliaState) {
+        const prod = window.AureliaProducts[window.currentProductId];
+        const detailWishlistBtn = document.querySelector('main .wishlist-toggle-btn');
+        if (detailWishlistBtn) {
+            const heartIcon = detailWishlistBtn.querySelector('.material-symbols-outlined');
+            if (heartIcon && window.AureliaState.isInWishlist(prod.name)) {
+                heartIcon.classList.add('fill-icon');
+            }
+        }
+    }
 
     // 4. Product Gallery Thumbnail Switching
     const thumbs = document.querySelectorAll('.aspect-square.cursor-pointer');

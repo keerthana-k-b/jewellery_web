@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AURELIA | Frequently Asked Questions</title>
+    <!-- Tailwind CSS Compiled -->
+    <link rel="stylesheet" href="css/tailwind-compiled.css">
+    <!-- Style Mappings -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md overflow-x-hidden">
+
+<!-- Standardized Header / TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl border-b border-outline-variant py-4 transition-all duration-300">
+    <div class="flex flex-col w-full max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+        <div class="flex items-center justify-between">
+            <!-- Mobile Menu hamburger icon -->
+            <button class="md:hidden text-primary header-menu-btn focus:outline-none">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            
+            <!-- Branding -->
+            <a href="index.html" class="font-display-lg text-[24px] md:text-headline-lg tracking-tighter text-primary cursor-pointer hover:scale-105 transition-transform duration-500">
+                AURELIA
+            </a>
+            
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-all" href="collection.html">All Jewellery</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-gold" href="collection.html?metal=gold">Gold</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-diamond" href="collection.html?stone=diamond">Diamond</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-earrings" href="collection.html?category=earrings">Earrings</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-rings" href="collection.html?category=rings">Rings</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-pendants" href="collection.html?category=pendants">Pendants</a></nav>
+            
+            <!-- Actions -->
+            <div class="flex items-center space-x-6 text-on-surface">
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 header-search-btn">search</span>
+                <a href="wishlist.html" class="relative hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 flex items-center">
+                    <span class="material-symbols-outlined">favorite</span>
+                    <span class="wishlist-badge hidden absolute -top-1.5 -right-1.5 bg-primary text-on-primary text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+                </a>
+                <a href="contact.html" class="hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 flex items-center">
+                    <span class="material-symbols-outlined">person</span>
+                </a>
+                <a href="cart.html" class="relative hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 header-cart-btn flex items-center">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                    <span class="cart-badge hidden absolute -top-1.5 -right-1.5 bg-primary text-on-primary text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+                </a></div>
+        </div>
+    </div>
+</header>
+
+<main class="pt-32 pb-section-gap max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 mb-8 text-on-surface-variant font-label-caps text-[10px]">
+        <a class="hover:text-primary transition-colors" href="index.html">HOME</a>
+        <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+        <span class="text-primary font-bold">CLIENT FAQ</span>
+    </nav>
+
+    <div class="max-w-4xl mx-auto space-y-16">
+        <!-- Header -->
+        <div class="text-center space-y-4">
+            <span class="font-label-caps text-label-caps text-primary">CLIENT KNOWLEDGE HUB</span>
+            <h1 class="font-display-lg text-display-lg-mobile md:text-headline-lg text-on-surface">Frequently Asked Questions</h1>
+            <p class="text-on-surface-variant font-body-md max-w-lg mx-auto">
+                Discover information on shipping tracking, diamond quality audits, ring measurements, and care recommendations.
+            </p>
+        </div>
+
+        <!-- Accordions Container -->
+        <div class="space-y-12">
+            <!-- Section 1: Shipping & Delivery -->
+            <div class="space-y-4">
+                <h2 class="font-label-caps text-xs font-bold text-primary tracking-widest border-b border-outline-variant/30 pb-2">1. SHIPPING & DELIVERY LOGISTICS</h2>
+                
+                <details class="group border border-outline-variant/20 p-5 bg-surface-container-low cursor-pointer transition-all">
+                    <summary class="flex justify-between items-center font-label-caps text-xs font-semibold list-none outline-none">
+                        HOW LONG DOES DELIVERY TAKE AND IS SHIPPING INSURED?
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-primary text-base">expand_more</span>
+                    </summary>
+                    <p class="text-sm text-on-surface-variant font-body-md mt-4 leading-relaxed pr-6">
+                        Every order contains free fully-insured courier transit via specialty shipping firms (such as Sequel or Malca-Amit). In-stock items ship within 24-48 business hours and arrive in 3-5 business days. Custom engraving orders require an additional 5-7 business days of preparation.
+                    </p>
+                </details>
+
+                <details class="group border border-outline-variant/20 p-5 bg-surface-container-low cursor-pointer transition-all">
+                    <summary class="flex justify-between items-center font-label-caps text-xs font-semibold list-none outline-none">
+                        CAN I REDIRECT THE PARCEL DURING TRANSIT?
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-primary text-base">expand_more</span>
+                    </summary>
+                    <p class="text-sm text-on-surface-variant font-body-md mt-4 leading-relaxed pr-6">
+                        For security and fraud prevention, we require a direct hand-delivery signature upon arrival at the shipping address provided during checkout. Addresses cannot be redirected once the high-value transit package has left our secure holding vaults.
+                    </p>
+                </details>
+            </div>
+
+            <!-- Section 2: Returns & Exchanges -->
+            <div class="space-y-4">
+                <h2 class="font-label-caps text-xs font-bold text-primary tracking-widest border-b border-outline-variant/30 pb-2">2. RETURNS & EXCHANGES POLICY</h2>
+                
+                <details class="group border border-outline-variant/20 p-5 bg-surface-container-low cursor-pointer transition-all">
+                    <summary class="flex justify-between items-center font-label-caps text-xs font-semibold list-none outline-none">
+                        WHAT IS YOUR STANDARD RETURN WINDOW?
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-primary text-base">expand_more</span>
+                    </summary>
+                    <p class="text-sm text-on-surface-variant font-body-md mt-4 leading-relaxed pr-6">
+                        We offer a 30-day return window for unworn items in pristine condition, accompanied by all original certification tags, packaging structures, and grading documents. Custom engraved rings and bespoke orders cannot be returned.
+                    </p>
+                </details>
+
+                <details class="group border border-outline-variant/20 p-5 bg-surface-container-low cursor-pointer transition-all">
+                    <summary class="flex justify-between items-center font-label-caps text-xs font-semibold list-none outline-none">
+                        ARE THERE CHARGES FOR PRE-PAID RETURNING PACKAGES?
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-primary text-base">expand_more</span>
+                    </summary>
+                    <p class="text-sm text-on-surface-variant font-body-md mt-4 leading-relaxed pr-6">
+                        We provide pre-paid insured shipping labels for standard size exchanges or quality returns. Please contact our concierge desk to arrange a courier pickup slot. Returns missing GIA diamond certificates are subject to a $250 laboratory re-evaluation fee.
+                    </p>
+                </details>
+            </div>
+
+            <!-- Section 3: Diamond & Product Details -->
+            <div class="space-y-4">
+                <h2 class="font-label-caps text-xs font-bold text-primary tracking-widest border-b border-outline-variant/30 pb-2">3. PRODUCT SPECIFICATIONS & DIAMONDS</h2>
+                
+                <details class="group border border-outline-variant/20 p-5 bg-surface-container-low cursor-pointer transition-all">
+                    <summary class="flex justify-between items-center font-label-caps text-xs font-semibold list-none outline-none">
+                        WHAT CERTIFICATIONS ACCOMPANY THE DIAMONDS?
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-primary text-base">expand_more</span>
+                    </summary>
+                    <p class="text-sm text-on-surface-variant font-body-md mt-4 leading-relaxed pr-6">
+                        All our solitaire stones above 0.3 carats are audited and stamped by the Gemological Institute of America (GIA) or the International Gemological Institute (IGI). The physical certificate packet is shipped along with the final jewelry box.
+                    </p>
+                </details>
+
+                <details class="group border border-outline-variant/20 p-5 bg-surface-container-low cursor-pointer transition-all">
+                    <summary class="flex justify-between items-center font-label-caps text-xs font-semibold list-none outline-none">
+                        DO YOU SOURCING LABORATORY OR NATURAL STONES?
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-primary text-base">expand_more</span>
+                    </summary>
+                    <p class="text-sm text-on-surface-variant font-body-md mt-4 leading-relaxed pr-6">
+                        Aurelia specializes strictly in natural mined diamonds of high color and clarity grades (D-H color, IF-VS2 clarity). Our materials are ethically sourced and verified conflict-free through standard Kimberley Process declarations.
+                    </p>
+                </details>
+            </div>
+
+            <!-- Section 4: Jewellery Care -->
+            <div class="space-y-4">
+                <h2 class="font-label-caps text-xs font-bold text-primary tracking-widest border-b border-outline-variant/30 pb-2">4. JEWELLERY CARE & MAINTENANCE</h2>
+                
+                <details class="group border border-outline-variant/20 p-5 bg-surface-container-low cursor-pointer transition-all">
+                    <summary class="flex justify-between items-center font-label-caps text-xs font-semibold list-none outline-none">
+                        HOW SHOULD I CLEAN MY DIAMONDS AT HOME?
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-primary text-base">expand_more</span>
+                    </summary>
+                    <p class="text-sm text-on-surface-variant font-body-md mt-4 leading-relaxed pr-6">
+                        Clean gold and diamond surfaces using lukewarm water and a drop of pH-neutral dish soap. Gently scrub using a soft-bristled brush (like a baby toothbrush) and dry thoroughly using a clean microfibre cloth. Avoid harsh household cleaning agents.
+                    </p>
+                </details>
+
+                <details class="group border border-outline-variant/20 p-5 bg-surface-container-low cursor-pointer transition-all">
+                    <summary class="flex justify-between items-center font-label-caps text-xs font-semibold list-none outline-none">
+                        HOW OFTEN SHOULD I SCHEDULE RESTORATION & RESEALS?
+                        <span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180 text-primary text-base">expand_more</span>
+                    </summary>
+                    <p class="text-sm text-on-surface-variant font-body-md mt-4 leading-relaxed pr-6">
+                        We recommend booking an expert maintenance inspection at an Aurelia showroom once every 12 months. Our artisans will inspect prong alignments, tighten settings, and polish gold surfaces to restore original luster.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Standardized Footer -->
+<footer class="bg-surface-container-low w-full pt-20 pb-10 border-t border-outline-variant/30">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-gutter max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+        <div class="col-span-2 md:col-span-1 mb-10 md:mb-0">
+            <div class="font-display-lg text-headline-lg text-primary mb-6">AURELIA</div>
+            <p class="font-body-md text-on-surface-variant text-sm mb-6">Elevating the human spirit through the art of fine jewelry since 1924.</p>
+            <div class="flex space-x-4">
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="public">public</span>
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="camera">camera</span>
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="share">share</span>
+            </div>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Company</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Our Story</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Craftsmanship</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Careers</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Ethics</a>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Customer Support</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Contact Us</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="shipping-returns.html">Shipping &amp; Returns</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="faq.html">Care Guide</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="faq.html">FAQ</a>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Services</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Cleaning &amp; Polishing</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Ring Resizing</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Valuation</a>
+        </div>
+        <div class="col-span-2 md:col-span-1 mt-10 md:mt-0">
+            <h5 class="font-headline-md text-[18px] text-primary mb-4">Newsletter</h5>
+            <p class="font-body-md text-on-surface-variant text-sm mb-4">Subscribe to receive exclusive collection updates.</p>
+            <div class="relative">
+                <input class="w-full bg-transparent border-b border-outline-variant focus:border-primary text-on-surface font-body-md py-2 px-0 outline-none transition-all" placeholder="Email Address" type="email"/>
+                <button class="absolute right-0 bottom-2 text-primary hover:translate-x-1 transition-transform">
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop mt-20 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center text-sm font-body-md text-on-surface-variant">
+        <p>© 2024 Aurelia Fine Jewellery. All Rights Reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0 font-label-caps text-[10px]">
+            <a class="hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+            <a class="hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
+            <a class="hover:text-primary transition-colors" href="privacy.html">Accessibility</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Dynamic JS Scripts -->
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+</body>
+</html>

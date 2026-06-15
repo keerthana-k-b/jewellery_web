@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AURELIA | Your Wishlist</title>
+    <!-- Tailwind CSS Compiled -->
+    <link rel="stylesheet" href="css/tailwind-compiled.css">
+    <!-- Style Mappings -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md overflow-x-hidden">
+
+<!-- Standardized Header / TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl border-b border-outline-variant py-4 transition-all duration-300">
+    <div class="flex flex-col w-full max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+        <div class="flex items-center justify-between">
+            <!-- Mobile Menu hamburger icon -->
+            <button class="md:hidden text-primary header-menu-btn focus:outline-none">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            
+            <!-- Branding -->
+            <a href="index.html" class="font-display-lg text-[24px] md:text-headline-lg tracking-tighter text-primary cursor-pointer hover:scale-105 transition-transform duration-500">
+                AURELIA
+            </a>
+            
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-all" href="collection.html">All Jewellery</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-gold" href="collection.html?metal=gold">Gold</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-diamond" href="collection.html?stone=diamond">Diamond</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-earrings" href="collection.html?category=earrings">Earrings</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-rings" href="collection.html?category=rings">Rings</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-pendants" href="collection.html?category=pendants">Pendants</a></nav>
+            
+            <!-- Actions -->
+            <div class="flex items-center space-x-6 text-on-surface">
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 header-search-btn">search</span>
+                <a href="wishlist.html" class="relative hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 flex items-center">
+                    <span class="material-symbols-outlined">favorite</span>
+                    <span class="wishlist-badge hidden absolute -top-1.5 -right-1.5 bg-primary text-on-primary text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+                </a>
+                <a href="contact.html" class="hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 flex items-center">
+                    <span class="material-symbols-outlined">person</span>
+                </a>
+                <a href="cart.html" class="relative hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 header-cart-btn flex items-center">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                    <span class="cart-badge hidden absolute -top-1.5 -right-1.5 bg-primary text-on-primary text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+                </a></div>
+        </div>
+    </div>
+</header>
+
+<main class="pt-32 pb-section-gap max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+    <!-- Breadcrumbs -->
+    <nav class="flex items-center gap-2 mb-8 text-on-surface-variant font-label-caps text-[10px]">
+        <a class="hover:text-primary transition-colors" href="index.html">HOME</a>
+        <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+        <span class="text-primary font-bold">YOUR WISHLIST</span>
+    </nav>
+
+    <div class="space-y-12">
+        <div>
+            <span class="font-label-caps text-label-caps text-primary block mb-2">CURATED FAVORITES</span>
+            <h1 class="font-display-lg text-display-lg-mobile md:text-headline-lg text-on-surface">Your Wishlist</h1>
+        </div>
+
+        <!-- Wishlist Grid Container -->
+        <div id="wishlist-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Dynamic elements render here -->
+        </div>
+
+        <!-- Empty State (Hidden by default unless list is empty) -->
+        <div id="wishlist-empty-state" class="hidden py-24 text-center max-w-md mx-auto space-y-6">
+            <span class="material-symbols-outlined text-primary text-6xl">favorite_border</span>
+            <div class="space-y-2">
+                <h3 class="font-headline-md text-2xl text-on-surface">Your Wishlist is Empty</h3>
+                <p class="text-on-surface-variant font-body-md text-sm leading-relaxed">
+                    Bookmark your favorite GIA-certified diamonds and handcrafted gold rings to review them later or share with advisors.
+                </p>
+            </div>
+            <a href="collection.html" class="inline-block px-12 py-4 bg-primary text-on-primary font-label-caps text-xs tracking-widest font-bold shadow-md">
+                BROWSE COLLECTIONS
+            </a>
+        </div>
+    </div>
+</main>
+
+<!-- Standardized Footer -->
+<footer class="bg-surface-container-low w-full pt-20 pb-10 border-t border-outline-variant/30">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-gutter max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+        <div class="col-span-2 md:col-span-1 mb-10 md:mb-0">
+            <div class="font-display-lg text-headline-lg text-primary mb-6">AURELIA</div>
+            <p class="font-body-md text-on-surface-variant text-sm mb-6">Elevating the human spirit through the art of fine jewelry since 1924.</p>
+            <div class="flex space-x-4">
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="public">public</span>
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="camera">camera</span>
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="share">share</span>
+            </div>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Company</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Our Story</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Craftsmanship</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Careers</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Ethics</a>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Customer Support</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Contact Us</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="shipping-returns.html">Shipping &amp; Returns</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="faq.html">Care Guide</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="faq.html">FAQ</a>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Services</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Cleaning &amp; Polishing</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Ring Resizing</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Valuation</a>
+        </div>
+        <div class="col-span-2 md:col-span-1 mt-10 md:mt-0">
+            <h5 class="font-headline-md text-[18px] text-primary mb-4">Newsletter</h5>
+            <p class="font-body-md text-on-surface-variant text-sm mb-4">Subscribe to receive exclusive collection updates.</p>
+            <div class="relative">
+                <input class="w-full bg-transparent border-b border-outline-variant focus:border-primary text-on-surface font-body-md py-2 px-0 outline-none transition-all" placeholder="Email Address" type="email"/>
+                <button class="absolute right-0 bottom-2 text-primary hover:translate-x-1 transition-transform">
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop mt-20 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center text-sm font-body-md text-on-surface-variant">
+        <p>© 2024 Aurelia Fine Jewellery. All Rights Reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0 font-label-caps text-[10px]">
+            <a class="hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+            <a class="hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
+            <a class="hover:text-primary transition-colors" href="privacy.html">Accessibility</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Dynamic JS Scripts -->
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+
+<!-- Wishlist Dynamic Logic -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const renderWishlist = () => {
+            const container = document.getElementById('wishlist-container');
+            const emptyState = document.getElementById('wishlist-empty-state');
+            const items = window.AureliaState ? window.AureliaState.wishlist : [];
+
+            if (items.length === 0) {
+                container.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            }
+
+            emptyState.classList.add('hidden');
+            container.innerHTML = items.map((item, idx) => {
+                return `
+                    <div class="luxury-card bg-white group cursor-pointer relative border border-outline-variant/10 hover:border-primary/30 transition-all duration-500">
+                        <div class="aspect-square overflow-hidden relative">
+                            <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="${item.img}" alt="${item.name}" />
+                            <button onclick="removeFromWishlistPage('${item.name}')" class="absolute top-4 right-4 text-primary bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-sm fill-icon">close</span>
+                            </button>
+                        </div>
+                        <div class="p-6 space-y-4">
+                            <div>
+                                <p class="font-label-caps text-on-surface-variant text-[10px] tracking-wider mb-1">${item.meta || '18K GOLD'}</p>
+                                <h4 class="font-body-lg text-on-surface font-semibold truncate hover:text-primary transition-colors">${item.name}</h4>
+                                <span class="font-price-display text-primary text-base font-semibold block mt-2">${item.price}</span>
+                            </div>
+                            
+                            <button onclick="addFromWishlistToCart(${idx})" class="w-full bg-[#735c00] text-white font-label-caps text-[10px] py-3 tracking-widest hover:bg-[#d4af37] transition-colors rounded-none">
+                                ADD TO BAG
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        };
+
+        // Exposed functions on window for onclick attributes
+        window.removeFromWishlistPage = (itemName) => {
+            if (window.AureliaState) {
+                const dummyItem = { name: itemName };
+                window.AureliaState.toggleWishlist(dummyItem);
+                renderWishlist();
+            }
+        };
+
+        window.addFromWishlistToCart = (idx) => {
+            if (window.AureliaState) {
+                const item = window.AureliaState.wishlist[idx];
+                window.AureliaState.addToCart(item);
+            }
+        };
+
+        renderWishlist();
+    });
+</script>
+</body>
+</html>

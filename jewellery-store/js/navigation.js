@@ -34,11 +34,11 @@ const AureliaNavigation = {
                 </div>
                 <nav class="flex flex-col space-y-6 font-label-caps text-sm tracking-widest">
                     <a href="collection.html" class="hover:text-primary transition-colors">All Jewellery</a>
-                    <a href="collection.html" class="hover:text-primary transition-colors">Gold</a>
-                    <a href="collection.html" class="hover:text-primary transition-colors">Diamond</a>
-                    <a href="collection.html" class="hover:text-primary transition-colors">Earrings</a>
-                    <a href="collection.html" class="hover:text-primary transition-colors">Rings</a>
-                    <a href="collection.html" class="hover:text-primary transition-colors">Pendants</a>
+                    <a href="collection.html?metal=gold" class="hover:text-primary transition-colors">Gold</a>
+                    <a href="collection.html?stone=diamond" class="hover:text-primary transition-colors">Diamond</a>
+                    <a href="collection.html?category=earrings" class="hover:text-primary transition-colors">Earrings</a>
+                    <a href="collection.html?category=rings" class="hover:text-primary transition-colors">Rings</a>
+                    <a href="collection.html?category=pendants" class="hover:text-primary transition-colors">Pendants</a>
                 </nav>
             </div>
             <div class="border-t border-outline-variant/30 pt-6">
@@ -74,7 +74,7 @@ const AureliaNavigation = {
                     <span id="cart-subtotal" class="font-semibold text-primary">$0.00</span>
                 </div>
                 <p class="font-body-md text-[10px] text-on-surface-variant">Shipping and taxes computed at checkout.</p>
-                <button class="w-full bg-[#735c00] text-white font-label-caps text-xs py-4 tracking-widest hover:bg-[#d4af37] transition-colors duration-500 rounded-none gold-shimmer">
+                <button id="proceedToCheckout" class="w-full bg-[#735c00] text-white font-label-caps text-xs py-4 tracking-widest hover:bg-[#d4af37] transition-colors duration-500 rounded-none gold-shimmer">
                     PROCEED TO CHECKOUT
                 </button>
             </div>
@@ -146,6 +146,14 @@ const AureliaNavigation = {
         document.getElementById('close-cart').addEventListener('click', () => this.closeAll());
         document.getElementById('close-search').addEventListener('click', () => this.closeAll());
         document.getElementById('close-size-guide').addEventListener('click', () => this.closeAll());
+        
+        // Checkout redirect
+        const checkoutBtn = document.getElementById('proceedToCheckout');
+        if (checkoutBtn) {
+            checkoutBtn.addEventListener('click', () => {
+                window.location.href = 'checkout.html';
+            });
+        }
     },
 
     // Bind triggers from standard header navigation links and icons
@@ -162,7 +170,10 @@ const AureliaNavigation = {
 
         // Cart trigger
         document.querySelectorAll('.header-cart-btn').forEach(btn => {
-            btn.addEventListener('click', () => this.openCart());
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.openCart();
+            });
         });
     },
 
@@ -247,16 +258,30 @@ const AureliaNavigation = {
 
         let subtotal = 0;
         container.innerHTML = items.map((item, idx) => {
-            const price = parseFloat(item.price.replace(/[$,]/g, ''));
+            const product = window.AureliaProducts ? window.AureliaProducts[item.id] : null;
+            if (!product) return '';
+            const qty = item.qty || 1;
+            const metal = item.selectedMetal || '18K Gold';
+            const size = item.selectedSize || 'Standard';
+            const itemPrice = window.calculateProductPrice ? window.calculateProductPrice(product, metal) : product.price;
+            const price = itemPrice * qty;
             subtotal += price;
+            const img = product.images && product.images.length > 0 ? product.images[0] : 'assets/images/fallback-product.webp';
             return `
                 <div class="flex items-center space-x-4 border-b border-outline-variant/10 pb-4">
-                    <img src="${item.img}" alt="${item.name}" class="w-16 h-20 object-cover bg-surface-container-low" />
+                    <img src="${img}" alt="${product.name}" class="w-16 h-20 object-cover bg-surface-container-low" onerror="this.src='assets/images/fallback-product.webp'" />
                     <div class="flex-1 space-y-1">
-                        <h5 class="font-headline-md text-sm text-on-surface font-semibold">${item.name}</h5>
-                        <p class="font-label-caps text-[10px] text-on-surface-variant">${item.meta || '18K GOLD'}</p>
-                        <div class="flex justify-between items-center">
-                            <span class="font-price-display text-xs text-primary">${item.price}</span>
+                        <div class="flex justify-between items-start">
+                            <h5 class="font-headline-md text-sm text-on-surface font-semibold">${product.name}</h5>
+                            <span class="font-price-display text-xs text-primary font-semibold">$${price.toLocaleString('en-US')}.00</span>
+                        </div>
+                        <p class="font-label-caps text-[10px] text-on-surface-variant">${metal} • Size ${size}</p>
+                        <div class="flex justify-between items-center mt-2">
+                            <div class="flex items-center space-x-2 border border-outline-variant/30 px-2 py-0.5">
+                                <button onclick="AureliaState.updateCartQty(${idx}, ${qty - 1})" class="text-[10px] text-on-surface-variant font-bold hover:text-primary">-</button>
+                                <span class="text-[10px] text-on-surface font-semibold px-1">${qty}</span>
+                                <button onclick="AureliaState.updateCartQty(${idx}, ${qty + 1})" class="text-[10px] text-on-surface-variant font-bold hover:text-primary">+</button>
+                            </div>
                             <button onclick="AureliaState.removeFromCart(${idx})" class="text-[10px] font-label-caps text-red-700 hover:underline">REMOVE</button>
                         </div>
                     </div>

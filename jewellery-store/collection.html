@@ -4,104 +4,8 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>AURELIA | Fine Jewellery Collections</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "on-surface-variant": "#4d4635",
-                    "on-tertiary-fixed": "#1b1d0e",
-                    "surface-container-highest": "#e2e2e2",
-                    "on-error-container": "#93000a",
-                    "outline": "#7f7663",
-                    "on-tertiary": "#ffffff",
-                    "inverse-primary": "#e9c349",
-                    "tertiary-fixed": "#e4e4cc",
-                    "secondary-fixed": "#e5e2e1",
-                    "tertiary-fixed-dim": "#c8c8b0",
-                    "error": "#ba1a1a",
-                    "tertiary": "#5e604d",
-                    "on-tertiary-fixed-variant": "#474836",
-                    "surface-container-low": "#f3f3f3",
-                    "on-background": "#1a1c1c",
-                    "inverse-surface": "#2f3131",
-                    "on-primary-container": "#554300",
-                    "on-surface": "#1a1c1c",
-                    "on-error": "#ffffff",
-                    "tertiary-container": "#b4b49d",
-                    "on-secondary": "#ffffff",
-                    "on-secondary-container": "#636262",
-                    "primary-fixed": "#ffe088",
-                    "surface-container-lowest": "#ffffff",
-                    "surface-variant": "#e2e2e2",
-                    "outline-variant": "#d0c5af",
-                    "surface-container": "#eeeeee",
-                    "on-primary-fixed-variant": "#574500",
-                    "on-secondary-fixed": "#1c1b1b",
-                    "on-primary": "#ffffff",
-                    "primary-fixed-dim": "#e9c349",
-                    "background": "#f9f9f9",
-                    "surface": "#f9f9f9",
-                    "primary-container": "#d4af37",
-                    "on-tertiary-container": "#454634",
-                    "on-primary-fixed": "#241a00",
-                    "surface-container-high": "#e8e8e8",
-                    "secondary": "#5f5e5e",
-                    "surface-tint": "#735c00",
-                    "on-secondary-fixed-variant": "#474746",
-                    "surface-bright": "#f9f9f9",
-                    "secondary-container": "#e2dfde",
-                    "surface-dim": "#dadada",
-                    "error-container": "#ffdad6",
-                    "secondary-fixed-dim": "#c8c6c5",
-                    "inverse-on-surface": "#f0f1f1",
-                    "primary": "#735c00"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0px",
-                    "lg": "0px",
-                    "xl": "0px",
-                    "full": "9999px"
-            },
-            "spacing": {
-                    "container-max": "1200px",
-                    "margin-desktop": "64px",
-                    "unit": "8px",
-                    "margin-mobile": "20px",
-                    "gutter": "24px",
-                    "edge-margin-desktop": "64px",
-                    "edge-margin-mobile": "20px",
-                    "section-gap": "96px"
-            },
-            "fontFamily": {
-                    "body-lg": ["\"Source Serif 4\""],
-                    "display-lg": ["Playfair Display"],
-                    "label-sm": ["\"Source Sans 3\""],
-                    "label-caps": ["\"Source Sans 3\""],
-                    "body-md": ["\"Source Serif 4\""],
-                    "headline-md": ["Playfair Display"],
-                    "headline-lg": ["Playfair Display"],
-                    "display-lg-mobile": ["Playfair Display"],
-                    "price-display": ["\"Source Sans 3\""]
-            },
-            "fontSize": {
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
-                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "600"}],
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                    "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
-                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                    "price-display": ["20px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}]
-            }
-          },
-        },
-      }
-    </script>
+    <!-- Tailwind CSS Compiled -->
+    <link rel="stylesheet" href="css/tailwind-compiled.css">
     <!-- Style Sheet Mappings -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/components.css" />
@@ -125,27 +29,27 @@
             
             <!-- Navigation Links (Desktop) -->
             <nav class="hidden md:flex items-center space-x-8">
-                <a class="nav-link font-label-caps text-label-caps text-primary border-b border-primary pb-1" id="nav-all" href="collection.html">All Jewellery</a>
-                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-gold" href="collection.html">Gold</a>
-                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-diamond" href="collection.html">Diamond</a>
-                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-earrings" href="collection.html">Earrings</a>
-                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-rings" href="collection.html">Rings</a>
-                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-pendants" href="collection.html">Pendants</a>
-            </nav>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-all" href="collection.html">All Jewellery</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-gold" href="collection.html?metal=gold">Gold</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-diamond" href="collection.html?stone=diamond">Diamond</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-earrings" href="collection.html?category=earrings">Earrings</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-rings" href="collection.html?category=rings">Rings</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-pendants" href="collection.html?category=pendants">Pendants</a></nav>
             
             <!-- Actions -->
             <div class="flex items-center space-x-6 text-on-surface">
                 <span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 header-search-btn">search</span>
-                <span class="relative material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110">
-                    favorite
+                <a href="wishlist.html" class="relative hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 flex items-center">
+                    <span class="material-symbols-outlined">favorite</span>
                     <span class="wishlist-badge hidden absolute -top-1.5 -right-1.5 bg-primary text-on-primary text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
-                </span>
-                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110">person</span>
-                <span class="relative material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 header-cart-btn">
-                    shopping_bag
+                </a>
+                <a href="contact.html" class="hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 flex items-center">
+                    <span class="material-symbols-outlined">person</span>
+                </a>
+                <a href="cart.html" class="relative hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 header-cart-btn flex items-center">
+                    <span class="material-symbols-outlined">shopping_bag</span>
                     <span class="cart-badge hidden absolute -top-1.5 -right-1.5 bg-primary text-on-primary text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
-                </span>
-            </div>
+                </a></div>
         </div>
     </div>
 </header>
@@ -170,48 +74,69 @@
     </section>
 
     <div class="flex flex-col lg:flex-row gap-gutter">
-        <!-- Sidebar Filters -->
-        <aside class="w-full lg:w-64 flex-none mb-10 lg:mb-0">
+        <!-- Sidebar Filters (Desktop) -->
+        <aside class="hidden lg:block w-full lg:w-64 flex-none mb-10 lg:mb-0">
             <div class="sticky top-28 space-y-10">
                 <div>
                     <h3 class="font-label-caps text-label-caps text-primary mb-6">CATEGORY</h3>
-                    <ul class="space-y-3 font-body-md text-on-surface-variant text-sm">
-                        <li class="flex items-center justify-between cursor-pointer hover:text-primary transition-colors"><span>Necklaces</span><span class="text-[12px] opacity-70">42</span></li>
-                        <li class="flex items-center justify-between cursor-pointer text-primary transition-colors font-semibold"><span>Rings</span><span class="text-[12px] opacity-70">86</span></li>
-                        <li class="flex items-center justify-between cursor-pointer hover:text-primary transition-colors"><span>Earrings</span><span class="text-[12px] opacity-70">54</span></li>
-                        <li class="flex items-center justify-between cursor-pointer hover:text-primary transition-colors"><span>Bracelets</span><span class="text-[12px] opacity-70">31</span></li>
+                    <ul class="space-y-3 font-body-md text-on-surface-variant text-sm" id="filter-category-list">
+                        <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="category" data-value="rings">
+                            <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                            <span>Rings</span>
+                        </li>
+                        <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="category" data-value="earrings">
+                            <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                            <span>Earrings</span>
+                        </li>
+                        <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="category" data-value="pendants">
+                            <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                            <span>Pendants</span>
+                        </li>
+                        <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="category" data-value="bangles">
+                            <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                            <span>Bangles</span>
+                        </li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="font-label-caps text-label-caps text-primary mb-6">METAL</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <button class="px-3 py-1 border border-primary text-primary font-label-caps text-[10px] bg-primary/5">18K YELLOW GOLD</button>
-                        <button class="px-3 py-1 border border-outline-variant text-on-surface-variant font-label-caps text-[10px] hover:border-primary/50">PLATINUM</button>
-                        <button class="px-3 py-1 border border-outline-variant text-on-surface-variant font-label-caps text-[10px] hover:border-primary/50">ROSE GOLD</button>
-                    </div>
+                    <ul class="space-y-3 font-body-md text-on-surface-variant text-sm" id="filter-metal-list">
+                        <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="metal" data-value="gold">
+                            <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                            <span>Gold</span>
+                        </li>
+                        <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="metal" data-value="diamond">
+                            <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                            <span>Diamond</span>
+                        </li>
+                        <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="metal" data-value="platinum">
+                            <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                            <span>Platinum</span>
+                        </li>
+                    </ul>
                 </div>
                 <div>
-                    <h3 class="font-label-caps text-label-caps text-primary mb-6">PRICE RANGE</h3>
-                    <input class="w-full h-1 bg-surface-container-highest appearance-none accent-primary cursor-pointer focus:outline-none" type="range"/>
+                    <label for="price-slider" class="font-label-caps text-label-caps text-primary mb-6 block font-semibold cursor-pointer">PRICE RANGE</label>
+                    <input id="price-slider" class="w-full h-1 bg-surface-container-highest appearance-none accent-primary cursor-pointer focus:outline-none" type="range"/>
                     <div class="flex justify-between mt-4 font-label-caps text-[10px] text-on-surface-variant">
-                        <span>$1,000</span>
-                        <span>$50,000+</span>
+                        <span>$500</span>
+                        <span id="price-limit-display">$50,000</span>
                     </div>
                 </div>
                 <div>
                     <h3 class="font-label-caps text-label-caps text-primary mb-6">COLLECTION</h3>
-                    <ul class="space-y-3 font-body-md text-on-surface-variant text-sm">
-                        <li class="flex items-center gap-3 cursor-pointer">
-                            <div class="w-4 h-4 border border-outline flex items-center justify-center"><div class="w-2 h-2 bg-primary"></div></div>
-                            <span>Aurelia Heritage</span>
+                    <ul class="space-y-3 font-body-md text-on-surface-variant text-sm" id="filter-collection-list">
+                        <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="collection" data-value="bridal">
+                            <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                            <span>Bridal</span>
                         </li>
-                        <li class="flex items-center gap-3 cursor-pointer">
-                            <div class="w-4 h-4 border border-outline"></div>
-                            <span>Celestial Glow</span>
+                        <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="collection" data-value="heritage">
+                            <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                            <span>Heritage</span>
                         </li>
-                        <li class="flex items-center gap-3 cursor-pointer">
-                            <div class="w-4 h-4 border border-outline"></div>
-                            <span>Lunar Silk</span>
+                        <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="collection" data-value="celestial">
+                            <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                            <span>Celestial</span>
                         </li>
                     </ul>
                 </div>
@@ -223,8 +148,17 @@
             <!-- Sorting & View -->
             <div class="flex items-center justify-between mb-8 pb-4 border-b border-outline-variant/30">
                 <div class="flex gap-4">
-                    <button class="flex items-center gap-2 font-label-caps text-[11px] text-on-surface border border-outline-variant px-4 py-2 hover:border-primary transition-colors bg-surface-container-lowest">
-                        SORT: POPULAR <span class="material-symbols-outlined text-[16px]">expand_more</span>
+                    <div class="relative">
+                        <select id="sort-dropdown" aria-label="Sort Jewellery" class="flex items-center gap-2 font-label-caps text-[11px] text-on-surface border border-outline-variant px-4 py-2 hover:border-primary transition-colors bg-surface-container-lowest appearance-none pr-8 focus:outline-none focus:ring-0">
+                            <option value="popular">SORT: POPULAR</option>
+                            <option value="newest">SORT: NEWEST</option>
+                            <option value="price-low">PRICE: LOW &rarr; HIGH</option>
+                            <option value="price-high">PRICE: HIGH &rarr; LOW</option>
+                        </select>
+                        <span class="material-symbols-outlined absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none text-xs">expand_more</span>
+                    </div>
+                    <button id="mobile-filter-toggle" class="lg:hidden flex items-center gap-2 font-label-caps text-[11px] text-on-surface border border-outline-variant px-4 py-2 hover:border-primary transition-colors bg-surface-container-lowest">
+                        FILTERS <span class="material-symbols-outlined text-[16px]">filter_list</span>
                     </button>
                 </div>
                 <div class="flex gap-2">
@@ -233,12 +167,19 @@
                 </div>
             </div>
 
+            <!-- Active Filters Chips -->
+            <div id="active-filters-container" class="flex flex-wrap items-center gap-3 mb-6 hidden">
+                <span class="font-label-caps text-[10px] text-on-surface-variant">ACTIVE FILTERS:</span>
+                <div id="active-chips-parent" class="flex flex-wrap gap-2"></div>
+                <button id="clear-all-filters-btn" class="font-label-caps text-[10px] text-primary underline hover:text-primary-container">CLEAR ALL</button>
+            </div>
+
             <!-- Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-gutter gap-y-16">
+            <div id="product-grid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-gutter gap-y-16">
                 <!-- Card 1 -->
                 <div class="luxury-card group cursor-pointer relative border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
                     <div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A macro studio photograph of an exquisite 18K yellow gold ring with a large, brilliant-cut solitaire diamond." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3677yK0d5ELEEwBG-MvWctK2cPfNT---RWhxmudWjMuZ9qOR_vTgLctg8jvZZcSObeGQKQA-zxHE_PYExLYoxEs6ETEOgOijSBuTL06nQqTQqTs3Uiss2CBIkS44AFHhhZCsdAnR7Jm7JCRFZStQ8RLpo4pwmuBX1tZzgkxcabeOytFyDDwZwAaCfWFZr_85NaeTQb4BHrEf6T9ZSoxrZJxMPssGr9bGHG5XHctZFwkG1nvkZAryTdkciurO8aVwKJI--bySqV1w"/>
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A macro studio photograph of an exquisite 18K yellow gold ring with a large, brilliant-cut solitaire diamond." src="assets/images/aurelia_img_94a53b0f04a9.webp"/>
                         <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
                             <span class="material-symbols-outlined text-sm">favorite</span>
                         </button>
@@ -253,7 +194,7 @@
                     </div>
                     <div class="space-y-2">
                         <p class="font-label-caps text-[10px] text-primary">AURELIA HERITAGE</p>
-                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html">Aurora Solitaire Diamond Ring</a></h4>
+                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html?id=aurora-solitaire-ring">Aurora Solitaire Diamond Ring</a></h4>
                         <div class="flex items-center justify-between">
                             <p class="font-price-display text-on-surface font-semibold">$12,400</p>
                             <p class="font-label-caps text-[10px] text-on-surface-variant font-medium">6.42G GOLD</p>
@@ -264,7 +205,7 @@
                 <!-- Card 2 -->
                 <div class="luxury-card group cursor-pointer relative border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
                     <div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up photograph of a pair of intricate diamond chandelier earrings crafted in white gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn5IxdGD9y7_aZQAR585uX8bfmnEE-i_lnKWjfnDpRFARAkG4fe0bky_6xCzd_wH7-vXxBmX_YlXMlggt2op8_vniYNpXtAg3C6n1vfVaXdam2oxSks7YEwITQWhcmp2DvE4NH4p6Hk-m5CFG9N_UZQtPwKWSRdf-XEcnh0gCnUFmWWXJajAkWjbOeYI4RfD2NUW6JxdKWLXLmDISpI_clF3rF0drM0_bm2l_ZoK33wr2mKcN5PtaTDnqXaLAljvppHpjSqRrDiKg"/>
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up photograph of a pair of intricate diamond chandelier earrings crafted in white gold." src="assets/images/aurelia_img_26e4991b65de.webp"/>
                         <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
                             <span class="material-symbols-outlined text-sm">favorite</span>
                         </button>
@@ -277,7 +218,7 @@
                     </div>
                     <div class="space-y-2">
                         <p class="font-label-caps text-[10px] text-primary">CELESTIAL GLOW</p>
-                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html">Starlight Cascade Earrings</a></h4>
+                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html?id=starlight-cascade-earrings">Starlight Cascade Earrings</a></h4>
                         <div class="flex items-center justify-between">
                             <p class="font-price-display text-on-surface font-semibold">$8,950</p>
                             <p class="font-label-caps text-[10px] text-on-surface-variant font-medium">12.1G GOLD</p>
@@ -288,7 +229,7 @@
                 <!-- Card 3 -->
                 <div class="luxury-card group cursor-pointer relative border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
                     <div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An editorial luxury product shot featuring a heavy 18K yellow gold chain necklace with a singular, large emerald-cut pendant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjsHuOWQs-7itBMvsGZZd9mnfTrikU6TOAUa2TxD5qdWzCv3Qje5hhlbmTAG9zH0TetW_zoZGwh8f682xjSF9OwBlIJmfb-CTO5ZlRXg6wM30FPK_9t31-h2sCTioKJCYgQZgepGZGAQMzUdyQ1SJpxuFaiVboc63xG72Jcslv2CvHJuqDHzSrT6eMBeCR9UvhrZjrtn3KPEYjY69LPjg4KtsJ8emDLyVgWjjVuyhzaoZxKL9PCexRIOpc-i2b2zsxhJD5a2oicqk"/>
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An editorial luxury product shot featuring a heavy 18K yellow gold chain necklace with a singular, large emerald-cut pendant." src="assets/images/aurelia_img_4fdf8db55e48.webp"/>
                         <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
                             <span class="material-symbols-outlined text-sm">favorite</span>
                         </button>
@@ -301,7 +242,7 @@
                     </div>
                     <div class="space-y-2">
                         <p class="font-label-caps text-[10px] text-primary">LUNAR SILK</p>
-                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html">Emerald-Cut Legacy Pendant</a></h4>
+                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html?id=emerald-cut-legacy-pendant">Emerald-Cut Legacy Pendant</a></h4>
                         <div class="flex items-center justify-between">
                             <p class="font-price-display text-on-surface font-semibold">$15,200</p>
                             <p class="font-label-caps text-[10px] text-on-surface-variant font-medium">18.5G GOLD</p>
@@ -312,7 +253,7 @@
                 <!-- Card 4 -->
                 <div class="luxury-card group cursor-pointer relative border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
                     <div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A collection of three minimalist gold bangles in rose, yellow, and white gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGS_nF2Pazw2__8Q1ivOg5ClAN4fuJJZxrj-K2vxGArHFCMyjoFNxOWfUGPK9RT4Aq9OgPf6wxfMqIq1Hzll4KxcM0nYZtrH_7CkU5aIm0uGZ6HyCj82ua7Tovp8KXrf0sG4GhwIYxg0L2oRM_xDPQv9NWedXh-XcMSFBfl6S4xo6tBruxK3ZRFXznb_rMbnl78jxCouYkhgEA_mRG03ZwQRFW68Y4G_gVZgUQ36bGsggaaZTZPR9vuHoyEf9HD0MJpmdPjppEtes"/>
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A collection of three minimalist gold bangles in rose, yellow, and white gold." src="assets/images/aurelia_img_364be99f7739.webp"/>
                         <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
                             <span class="material-symbols-outlined text-sm">favorite</span>
                         </button>
@@ -327,7 +268,7 @@
                     </div>
                     <div class="space-y-2">
                         <p class="font-label-caps text-[10px] text-primary">AURELIA HERITAGE</p>
-                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html">Trinity Silk Bangles</a></h4>
+                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html?id=trinity-silk-bangles">Trinity Silk Bangles</a></h4>
                         <div class="flex items-center justify-between">
                             <p class="font-price-display text-on-surface font-semibold">$4,800</p>
                             <p class="font-label-caps text-[10px] text-on-surface-variant font-medium">24.0G GOLD</p>
@@ -338,7 +279,7 @@
                 <!-- Card 5 -->
                 <div class="luxury-card group cursor-pointer relative border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
                     <div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Exotic ruby and diamond drop earrings displayed on a dark grey silk cushion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuS-f3h2MSWo5tq7e6J5LXt4rgyeaFCHv74-pzmhUR_fg7apxV_Q0cckVE96F9Rz28r-bNBhm8p8W0k5ol6HhnrHOw5Xfl0ygaukc532Iq766cv-FfOX_3MVtCqCuElV4QOYQUo6u7-lbxn-297NytxAgKo7-Q5IDP5LU5GEzTt_0SmO-TXybd7iPiEiNooMMgdLIKSynZQIgNNlT4xEEwpJy33r6FPsc4p7cff_iZG89-Xricq1Vy6hBnualXmtuZZVTjZXEMqxU"/>
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Exotic ruby and diamond drop earrings displayed on a dark grey silk cushion." src="assets/images/aurelia_img_64a4c3c503da.webp"/>
                         <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
                             <span class="material-symbols-outlined text-sm">favorite</span>
                         </button>
@@ -351,7 +292,7 @@
                     </div>
                     <div class="space-y-2">
                         <p class="font-label-caps text-[10px] text-primary">CELESTIAL GLOW</p>
-                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html">Royal Crimson Drops</a></h4>
+                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html?id=royal-crimson-drops">Royal Crimson Drops</a></h4>
                         <div class="flex items-center justify-between">
                             <p class="font-price-display text-on-surface font-semibold">$22,100</p>
                             <p class="font-label-caps text-[10px] text-on-surface-variant font-medium">10.4G GOLD</p>
@@ -362,7 +303,7 @@
                 <!-- Card 6 -->
                 <div class="luxury-card group cursor-pointer relative border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
                     <div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
-                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist platinum band with a hidden pave diamond setting on the inner edge." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJjuYDeupTmCXaiHoC5zKET5WkOch_nW14h9IdneKm9hrt6dknqWkViLTWF3AMjVWI38z21eOz_xko0iOlHkuE40dXluPDqXdKgc1MLzSxlLT_OQV9q_Z2MVyUhPuFOTabupsW_kuRrDkDiK_L6ziiwndW_iuRJNhC0HXjBpQYB6VsBGgXrPCnRBYdFEEhxeWkceL7245JPyJdBvTxqI6bDgqL9UHmbUdv-XgITalddxXR8F1YYtWJjbrncnVisqxzLDzsvvSJp78"/>
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist platinum band with a hidden pave diamond setting on the inner edge." src="assets/images/aurelia_img_6b72d39c6199.webp"/>
                         <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
                             <span class="material-symbols-outlined text-sm">favorite</span>
                         </button>
@@ -372,7 +313,7 @@
                     </div>
                     <div class="space-y-2">
                         <p class="font-label-caps text-[10px] text-primary">LUNAR SILK</p>
-                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html">Architect Platinum Band</a></h4>
+                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html?id=architect-platinum-band">Architect Platinum Band</a></h4>
                         <div class="flex items-center justify-between">
                             <p class="font-price-display text-on-surface font-semibold">$3,200</p>
                             <p class="font-label-caps text-[10px] text-on-surface-variant font-medium">PLATINUM</p>
@@ -415,23 +356,23 @@
         </div>
         <div class="flex flex-col space-y-4">
             <h5 class="font-headline-md text-[18px] text-primary mb-2">Company</h5>
-            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Our Story</a>
-            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Craftsmanship</a>
-            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Careers</a>
-            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Ethics</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Our Story</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Craftsmanship</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Careers</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Ethics</a>
         </div>
         <div class="flex flex-col space-y-4">
             <h5 class="font-headline-md text-[18px] text-primary mb-2">Customer Support</h5>
-            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Contact Us</a>
-            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Shipping &amp; Returns</a>
-            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Care Guide</a>
-            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">FAQ</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Contact Us</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="shipping-returns.html">Shipping &amp; Returns</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="faq.html">Care Guide</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="faq.html">FAQ</a>
         </div>
         <div class="flex flex-col space-y-4">
             <h5 class="font-headline-md text-[18px] text-primary mb-2">Services</h5>
-            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Cleaning &amp; Polishing</a>
-            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Ring Resizing</a>
-            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Valuation</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Cleaning &amp; Polishing</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Ring Resizing</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Valuation</a>
         </div>
         <div class="col-span-2 md:col-span-1 mt-10 md:mt-0">
             <h5 class="font-headline-md text-[18px] text-primary mb-4">Newsletter</h5>
@@ -447,16 +388,510 @@
     <div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop mt-20 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center text-sm font-body-md text-on-surface-variant">
         <p>© 2024 Aurelia Fine Jewellery. All Rights Reserved.</p>
         <div class="flex space-x-6 mt-4 md:mt-0 font-label-caps text-[10px]">
-            <a class="hover:text-primary transition-colors" href="collection.html">Privacy Policy</a>
-            <a class="hover:text-primary transition-colors" href="collection.html">Terms of Service</a>
-            <a class="hover:text-primary transition-colors" href="collection.html">Accessibility</a>
+            <a class="hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+            <a class="hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
+            <a class="hover:text-primary transition-colors" href="privacy.html">Accessibility</a>
         </div>
     </div>
 </footer>
+
+<!-- Mobile Filter Drawer -->
+<div id="mobile-filter-drawer" class="fixed inset-y-0 right-0 z-50 w-80 max-w-full bg-surface-container-lowest shadow-2xl translate-x-full transition-transform duration-300 ease-in-out flex flex-col justify-between p-6 md:hidden">
+    <div>
+        <div class="flex justify-between items-center pb-4 border-b border-outline-variant/20 mb-6">
+            <span class="font-label-caps text-sm text-primary font-semibold">FILTERS</span>
+            <button id="close-mobile-filters" class="text-on-surface hover:text-primary"><span class="material-symbols-outlined">close</span></button>
+        </div>
+        <div class="space-y-8 overflow-y-auto max-h-[75vh] pr-2 custom-scrollbar">
+            <div>
+                <h3 class="font-label-caps text-label-caps text-primary mb-4">CATEGORY</h3>
+                <ul class="space-y-3 font-body-md text-on-surface-variant text-sm" id="mobile-filter-category-list">
+                    <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="category" data-value="rings">
+                        <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                        <span>Rings</span>
+                    </li>
+                    <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="category" data-value="earrings">
+                        <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                        <span>Earrings</span>
+                    </li>
+                    <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="category" data-value="pendants">
+                        <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                        <span>Pendants</span>
+                    </li>
+                    <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="category" data-value="bangles">
+                        <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                        <span>Bangles</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-label-caps text-label-caps text-primary mb-4">METAL</h3>
+                <ul class="space-y-3 font-body-md text-on-surface-variant text-sm" id="mobile-filter-metal-list">
+                    <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="metal" data-value="gold">
+                        <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                        <span>Gold</span>
+                    </li>
+                    <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="metal" data-value="diamond">
+                        <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                        <span>Diamond</span>
+                    </li>
+                    <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="metal" data-value="platinum">
+                        <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                        <span>Platinum</span>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <label for="mobile-price-slider" class="font-label-caps text-label-caps text-primary mb-4 block font-semibold cursor-pointer">PRICE RANGE</label>
+                <input id="mobile-price-slider" class="w-full h-1 bg-surface-container-highest appearance-none accent-primary cursor-pointer focus:outline-none" type="range"/>
+                <div class="flex justify-between mt-4 font-label-caps text-[10px] text-on-surface-variant">
+                    <span>$500</span>
+                    <span id="mobile-price-limit-display">$50,000</span>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-label-caps text-label-caps text-primary mb-4">COLLECTION</h3>
+                <ul class="space-y-3 font-body-md text-on-surface-variant text-sm" id="mobile-filter-collection-list">
+                    <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="collection" data-value="bridal">
+                        <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                        <span>Bridal</span>
+                    </li>
+                    <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="collection" data-value="heritage">
+                        <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                        <span>Heritage</span>
+                    </li>
+                    <li class="flex items-center gap-3 cursor-pointer select-none" data-filter="collection" data-value="celestial">
+                        <div class="w-4 h-4 border border-outline flex items-center justify-center filter-checkbox"><span class="material-symbols-outlined text-[10px] text-primary hidden font-bold">check</span></div>
+                        <span>Celestial</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <button id="apply-mobile-filters" class="w-full bg-[#735c00] text-white font-label-caps text-xs py-4 tracking-widest hover:bg-[#d4af37] transition-colors mt-6">
+        APPLY FILTERS
+    </button>
+</div>
 
 <!-- Dynamic JS Scripts -->
 <script src="js/main.js"></script>
 <script src="js/navigation.js"></script>
 <script src="js/animations.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Dynamic JSON-LD BreadcrumbList Schema for SEO
+        const breadcrumbSchema = {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": window.location.origin + "/index.html"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Fine Jewellery",
+                    "item": window.location.href
+                }
+            ]
+        };
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.text = JSON.stringify(breadcrumbSchema);
+        document.head.appendChild(script);
+
+        // Read URL query parameters initially
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Active selections state
+        const activeFilters = {
+            category: [],
+            metal: [],
+            collection: [],
+            maxPrice: 50000,
+            sort: 'popular'
+        };
+
+        // Populate initial activeFilters state from URL params
+        const categoryParam = urlParams.get("category");
+        if (categoryParam) activeFilters.category.push(categoryParam.toLowerCase());
+
+        const metalParam = urlParams.get("metal");
+        if (metalParam) activeFilters.metal.push(metalParam.toLowerCase());
+
+        const stoneParam = urlParams.get("stone");
+        if (stoneParam) activeFilters.metal.push(stoneParam.toLowerCase()); // treat stone=diamond as metal filter selection
+
+        const searchParam = urlParams.get("search");
+
+        // Sync UI visual checkboxes to activeFilters state
+        function syncCheckboxes() {
+            document.querySelectorAll('[data-filter]').forEach(el => {
+                const type = el.dataset.filter;
+                const val = el.dataset.value;
+                const checkboxInner = el.querySelector('.filter-checkbox span');
+                if (checkboxInner) {
+                    if (activeFilters[type].includes(val)) {
+                        checkboxInner.classList.remove('hidden');
+                        el.classList.add('text-primary', 'font-semibold');
+                    } else {
+                        checkboxInner.classList.add('hidden');
+                        el.classList.remove('text-primary', 'font-semibold');
+                    }
+                }
+            });
+        }
+
+        // Add event listeners to filter elements
+        document.querySelectorAll('[data-filter]').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.preventDefault();
+                const type = el.dataset.filter;
+                const val = el.dataset.value;
+                
+                const idx = activeFilters[type].indexOf(val);
+                if (idx > -1) {
+                    activeFilters[type].splice(idx, 1);
+                } else {
+                    activeFilters[type].push(val);
+                }
+                
+                syncCheckboxes();
+                updateActiveChips();
+                renderProducts();
+                updateURLParams();
+            });
+        });
+
+        // Price range sliders sync
+        const priceSlider = document.getElementById('price-slider');
+        const mobilePriceSlider = document.getElementById('mobile-price-slider');
+        const priceLimitDisplay = document.getElementById('price-limit-display');
+        const mobilePriceLimitDisplay = document.getElementById('mobile-price-limit-display');
+
+        function setupPriceSliders() {
+            [priceSlider, mobilePriceSlider].forEach(slider => {
+                if (!slider) return;
+                slider.min = 500;
+                slider.max = 50000;
+                slider.step = 500;
+                slider.value = activeFilters.maxPrice;
+                
+                slider.addEventListener('input', (e) => {
+                    const val = parseInt(e.target.value);
+                    activeFilters.maxPrice = val;
+                    
+                    // Sync values
+                    if (priceSlider) priceSlider.value = val;
+                    if (mobilePriceSlider) mobilePriceSlider.value = val;
+                    
+                    // Sync labels
+                    const labelText = val >= 50000 ? '$50,000+' : `$${val.toLocaleString('en-US')}`;
+                    if (priceLimitDisplay) priceLimitDisplay.textContent = labelText;
+                    if (mobilePriceLimitDisplay) mobilePriceLimitDisplay.textContent = labelText;
+                    
+                    renderProducts();
+                    updateURLParams();
+                });
+            });
+        }
+
+        // Sorting setup
+        const sortSelect = document.getElementById('sort-dropdown');
+        if (sortSelect) {
+            sortSelect.addEventListener('change', (e) => {
+                activeFilters.sort = e.target.value;
+                renderProducts();
+                updateURLParams();
+            });
+        }
+
+        // Active filter chips rendering
+        const chipsContainer = document.getElementById('active-filters-container');
+        const chipsParent = document.getElementById('active-chips-parent');
+        const clearAllBtn = document.getElementById('clear-all-filters-btn');
+
+        function updateActiveChips() {
+            if (!chipsParent) return;
+            chipsParent.innerHTML = '';
+            
+            let count = 0;
+            ['category', 'metal', 'collection'].forEach(type => {
+                activeFilters[type].forEach(val => {
+                    count++;
+                    const chip = document.createElement('span');
+                    chip.className = 'flex items-center gap-2 px-3 py-1 bg-surface-container border border-outline-variant text-on-surface font-label-caps text-[10px] select-none';
+                    chip.innerHTML = `
+                        <span>${type.toUpperCase()}: ${val.toUpperCase()}</span>
+                        <button class="material-symbols-outlined text-[12px] cursor-pointer hover:text-primary leading-none" data-remove-type="${type}" data-remove-val="${val}">close</button>
+                    `;
+                    // Bind chip close action
+                    chip.querySelector('button').addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const t = e.target.dataset.removeType;
+                        const v = e.target.dataset.removeVal;
+                        const idx = activeFilters[t].indexOf(v);
+                        if (idx > -1) {
+                            activeFilters[t].splice(idx, 1);
+                        }
+                        syncCheckboxes();
+                        updateActiveChips();
+                        renderProducts();
+                        updateURLParams();
+                    });
+                    chipsParent.appendChild(chip);
+                });
+            });
+
+            if (count > 0) {
+                chipsContainer.classList.remove('hidden');
+            } else {
+                chipsContainer.classList.add('hidden');
+            }
+        }
+
+        if (clearAllBtn) {
+            clearAllBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                activeFilters.category = [];
+                activeFilters.metal = [];
+                activeFilters.collection = [];
+                activeFilters.maxPrice = 50000;
+                
+                if (priceSlider) priceSlider.value = 50000;
+                if (mobilePriceSlider) mobilePriceSlider.value = 50000;
+                if (priceLimitDisplay) priceLimitDisplay.textContent = '$50,000+';
+                if (mobilePriceLimitDisplay) mobilePriceLimitDisplay.textContent = '$50,000+';
+                
+                syncCheckboxes();
+                updateActiveChips();
+                renderProducts();
+                updateURLParams();
+            });
+        }
+
+        // Sync local storage / query params URL state
+        function updateURLParams() {
+            const params = new URLSearchParams();
+            if (activeFilters.category.length === 1) params.set('category', activeFilters.category[0]);
+            if (activeFilters.metal.length === 1) params.set('metal', activeFilters.metal[0]);
+            if (searchParam) params.set('search', searchParam);
+            
+            const newUrl = params.toString() ? `collection.html?${params.toString()}` : 'collection.html';
+            window.history.replaceState(null, '', newUrl);
+        }
+
+        // Product Rendering logic
+        const gridContainer = document.getElementById('product-grid');
+        const countLabel = document.querySelector('main section .text-on-surface-variant.font-label-caps.text-sm');
+
+        function matchesMetal(product, filterVal) {
+            const metalStr = (product.specs?.metal || '').toLowerCase();
+            const nameStr = product.name.toLowerCase();
+            const diamondStr = (product.specs?.diamond || '').toLowerCase();
+            
+            if (filterVal === 'gold') {
+                return metalStr.includes('gold') || nameStr.includes('gold');
+            }
+            if (filterVal === 'platinum') {
+                return metalStr.includes('platinum') || nameStr.includes('platinum');
+            }
+            if (filterVal === 'diamond') {
+                return (diamondStr !== '' && diamondStr !== 'none') || nameStr.includes('diamond');
+            }
+            return false;
+        }
+
+        const renderProducts = () => {
+            if (!gridContainer || !window.AureliaProducts) return;
+
+            gridContainer.innerHTML = '';
+            
+            // Get all products matching filters
+            let productsList = Object.entries(window.AureliaProducts).map(([id, p]) => ({ id, ...p }));
+            
+            // Filter by category (OR within group)
+            if (activeFilters.category.length > 0) {
+                productsList = productsList.filter(p => activeFilters.category.includes(p.category.toLowerCase()));
+            }
+
+            // Filter by metal (OR within group)
+            if (activeFilters.metal.length > 0) {
+                productsList = productsList.filter(p => activeFilters.metal.some(m => matchesMetal(p, m)));
+            }
+
+            // Filter by collection (OR within group)
+            if (activeFilters.collection.length > 0) {
+                productsList = productsList.filter(p => activeFilters.collection.includes((p.collection || '').toLowerCase()));
+            }
+
+            // Filter by Search Query
+            if (searchParam) {
+                const query = searchParam.toLowerCase();
+                productsList = productsList.filter(p => {
+                    const nameMatch = p.name.toLowerCase().includes(query);
+                    const catMatch = p.category.toLowerCase().includes(query);
+                    const metalMatch = (p.specs && p.specs.metal) ? p.specs.metal.toLowerCase().includes(query) : false;
+                    const diamondMatch = (p.specs && p.specs.diamond) ? p.specs.diamond.toLowerCase().includes(query) : false;
+                    return nameMatch || catMatch || metalMatch || diamondMatch;
+                });
+            }
+
+            // Filter by price limit
+            productsList = productsList.filter(p => p.price <= activeFilters.maxPrice);
+
+            // Sort products
+            if (activeFilters.sort === 'price-low') {
+                productsList.sort((a, b) => a.price - b.price);
+            } else if (activeFilters.sort === 'price-high') {
+                productsList.sort((a, b) => b.price - a.price);
+            } else if (activeFilters.sort === 'newest') {
+                productsList.sort((a, b) => b.sku.localeCompare(a.sku)); // Sort in reverse alphabetical by SKU for newest first
+            }
+
+            // Render cards
+            productsList.forEach(product => {
+                const inWishlist = window.AureliaState ? window.AureliaState.isInWishlist(product.name) : false;
+                const heartClass = inWishlist ? 'fill-icon' : '';
+                const img = product.images && product.images.length > 0 ? product.images[0] : 'assets/images/fallback-product.webp';
+                const formattedPrice = `$${product.price.toLocaleString('en-US')}.00`;
+                const specsLabel = product.meta || (product.specs ? `${product.specs.weight || ''} ${product.specs.metal || ''}` : '');
+
+                const cardHtml = `
+                    <div class="luxury-card group cursor-pointer relative border border-transparent hover:border-primary/20 p-1 transition-all duration-500" data-id="${product.id}">
+                        <div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
+                            <a href="product.html?id=${product.id}" class="block w-full h-full">
+                                <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="${img}" alt="${product.name}" onerror="this.src='assets/images/fallback-product.webp'" />
+                            </a>
+                            <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
+                                <span class="material-symbols-outlined text-sm ${heartClass}">favorite</span>
+                            </button>
+                            <div class="quick-view-overlay absolute bottom-0 left-0 w-full p-4 bg-surface-container-lowest/90 backdrop-blur-md border-t border-primary/20 flex flex-col items-center">
+                                <span class="font-label-caps text-[10px] text-primary mb-2">QUICK VIEW</span>
+                                <div class="flex gap-2">
+                                    <div class="w-3 h-3 rounded-full bg-[#D4AF37] border border-black/10"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#E5E4E2] border border-black/10"></div>
+                                    <div class="w-3 h-3 rounded-full bg-[#B76E79] border border-black/10"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="space-y-2">
+                            <p class="font-label-caps text-[10px] text-primary">${product.category.toUpperCase()}</p>
+                            <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500">
+                                <a href="product.html?id=${product.id}">${product.name}</a>
+                            </h4>
+                            <div class="flex items-center justify-between">
+                                <p class="font-price-display text-on-surface font-semibold">${formattedPrice}</p>
+                                <p class="font-label-caps text-[10px] text-on-surface-variant font-medium">${specsLabel}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                gridContainer.insertAdjacentHTML('beforeend', cardHtml);
+            });
+
+            if (countLabel) {
+                countLabel.textContent = `${productsList.length} RESULTS`;
+            }
+
+            // Bind wishlist toggles on newly rendered cards
+            gridContainer.querySelectorAll('.wishlist-toggle-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const card = btn.closest('.luxury-card');
+                    const productId = card.dataset.id;
+                    if (window.AureliaState) {
+                        window.AureliaState.toggleWishlist({ id: productId });
+                        const icon = btn.querySelector('span');
+                        const isFav = window.AureliaState.isInWishlist(window.AureliaProducts[productId].name);
+                        if (isFav) {
+                            icon.classList.add('fill-icon');
+                        } else {
+                            icon.classList.remove('fill-icon');
+                        }
+                    }
+                });
+            });
+        };
+
+        // Mobile Filter Drawer Logic
+        const filterDrawer = document.getElementById('mobile-filter-drawer');
+        const filterToggle = document.getElementById('mobile-filter-toggle');
+        const closeFilters = document.getElementById('close-mobile-filters');
+        const applyFilters = document.getElementById('apply-mobile-filters');
+        const globalBackdrop = document.getElementById('global-backdrop');
+
+        function openMobileDrawer() {
+            if (globalBackdrop) globalBackdrop.classList.add('active');
+            if (filterDrawer) filterDrawer.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Scroll lock
+            
+            // Focus trapping first element
+            const closeBtn = document.getElementById('close-mobile-filters');
+            if (closeBtn) closeBtn.focus();
+        }
+
+        function closeMobileDrawer() {
+            if (globalBackdrop) globalBackdrop.classList.remove('active');
+            if (filterDrawer) filterDrawer.classList.remove('active');
+            document.body.style.overflow = ''; // Release scroll lock
+        }
+
+        if (filterToggle) filterToggle.addEventListener('click', openMobileDrawer);
+        if (closeFilters) closeFilters.addEventListener('click', closeMobileDrawer);
+        if (applyFilters) applyFilters.addEventListener('click', closeMobileDrawer);
+        
+        if (globalBackdrop) {
+            globalBackdrop.addEventListener('click', () => {
+                closeMobileDrawer();
+            });
+        }
+
+        // Escape Key Close Support
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeMobileDrawer();
+            }
+        });
+
+        // Focus trapping inside Mobile Filter Drawer
+        if (filterDrawer) {
+            const focusableElements = 'button, [href], input, select, textarea, [tabindex]:not([-1])';
+            filterDrawer.addEventListener('keydown', function(e) {
+                const isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+                if (!isTabPressed) return;
+                
+                const focusableContent = filterDrawer.querySelectorAll(focusableElements);
+                if (focusableContent.length === 0) return;
+                
+                const firstFocusableElement = focusableContent[0];
+                const lastFocusableElement = focusableContent[focusableContent.length - 1];
+                
+                if (e.shiftKey) { // Shift + Tab
+                    if (document.activeElement === firstFocusableElement) {
+                        lastFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                } else { // Tab
+                    if (document.activeElement === lastFocusableElement) {
+                        firstFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                }
+            });
+        }
+
+        // Initialize state, controls and render
+        syncCheckboxes();
+        setupPriceSliders();
+        updateActiveChips();
+        renderProducts();
+    });
+</script>
 </body>
 </html>

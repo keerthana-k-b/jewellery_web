@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AURELIA | Our Story & Heritage</title>
+    <!-- Tailwind CSS Compiled -->
+    <link rel="stylesheet" href="css/tailwind-compiled.css">
+    <!-- Style Mappings -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md overflow-x-hidden">
+
+<!-- Standardized Header / TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl border-b border-outline-variant py-4 transition-all duration-300">
+    <div class="flex flex-col w-full max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+        <div class="flex items-center justify-between">
+            <!-- Mobile Menu hamburger icon -->
+            <button class="md:hidden text-primary header-menu-btn focus:outline-none">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            
+            <!-- Branding -->
+            <a href="index.html" class="font-display-lg text-[24px] md:text-headline-lg tracking-tighter text-primary cursor-pointer hover:scale-105 transition-transform duration-500">
+                AURELIA
+            </a>
+            
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-all" href="collection.html">All Jewellery</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-gold" href="collection.html?metal=gold">Gold</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-diamond" href="collection.html?stone=diamond">Diamond</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-earrings" href="collection.html?category=earrings">Earrings</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-rings" href="collection.html?category=rings">Rings</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-pendants" href="collection.html?category=pendants">Pendants</a></nav>
+            
+            <!-- Actions -->
+            <div class="flex items-center space-x-6 text-on-surface">
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 header-search-btn">search</span>
+                <a href="wishlist.html" class="relative hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 flex items-center">
+                    <span class="material-symbols-outlined">favorite</span>
+                    <span class="wishlist-badge hidden absolute -top-1.5 -right-1.5 bg-primary text-on-primary text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+                </a>
+                <a href="contact.html" class="hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 flex items-center">
+                    <span class="material-symbols-outlined">person</span>
+                </a>
+                <a href="cart.html" class="relative hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 header-cart-btn flex items-center">
+                    <span class="material-symbols-outlined">shopping_bag</span>
+                    <span class="cart-badge hidden absolute -top-1.5 -right-1.5 bg-primary text-on-primary text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+                </a></div>
+        </div>
+    </div>
+</header>
+
+<main class="pt-32">
+    <!-- Hero Editorial Block -->
+    <section class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop mb-20 text-center">
+        <span class="font-label-caps text-label-sm text-primary tracking-[0.4em] block mb-4">A CENTURY OF ELEGANCE</span>
+        <h1 class="font-display-lg text-4xl md:text-6xl text-on-surface mb-8 max-w-4xl mx-auto leading-tight">Elevating the Human Spirit Through the Art of Fine Jewellery</h1>
+        <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+            Since 1924, Aurelia has stood as a beacon of luxury craftsmanship, carving legacy statements out of gold, platinum, and diamonds. Our philosophy combines age-old techniques with modern minimalism.
+        </p>
+    </section>
+
+    <!-- Brand Story & Heritage Timeline -->
+    <section class="bg-surface-container-low py-20 border-y border-outline-variant/30">
+        <div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-6">
+                    <span class="font-label-caps text-label-caps text-primary">OUR INCEPTION</span>
+                    <h2 class="font-headline-lg text-on-surface">The Aurelia Legacy</h2>
+                    <p class="font-body-md text-on-surface-variant leading-relaxed">
+                        Founded in the historic quarters of Antwerp by master artisan Charles Aurelius, our house originally served private royalty collectors across Western Europe. Over generations, the studio migrated its headquarters to craft legacy showrooms in capital cities globally, establishing Charles’s design tenets—unmatched symmetry, hidden details, and heavy solid weights.
+                    </p>
+                    <p class="font-body-md text-on-surface-variant leading-relaxed">
+                        Today, Aurelia is managed by third-generation designer-owners, expanding Charles’s classical shapes with modern, airy frameworks that trap light and feel virtually weightless on the wearer, yet retain structural permanence.
+                    </p>
+                </div>
+                <!-- Interactive timeline checklist visual -->
+                <div class="border-l border-primary/40 pl-8 space-y-12">
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-primary border-4 border-surface-container-low"></div>
+                        <h4 class="font-label-caps text-xs text-primary font-bold">1924 — THE APPRENTICE’S BENCH</h4>
+                        <p class="text-sm text-on-surface-variant mt-2">Charles Aurelius opens a small gem-cutting studio in Antwerp, prioritizing high-clarity rough diamonds.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-primary border-4 border-surface-container-low"></div>
+                        <h4 class="font-label-caps text-xs text-primary font-bold">1958 — GLOBAL CERTIFICATION LEAD</h4>
+                        <p class="text-sm text-on-surface-variant mt-2">Aurelia becomes one of the early adopters of GIA grading methods, guaranteeing standard carat audits.</p>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute -left-[41px] top-1.5 w-5 h-5 rounded-full bg-primary border-4 border-surface-container-low"></div>
+                        <h4 class="font-label-caps text-xs text-primary font-bold">2002 — ETHICAL TRANSITION</h4>
+                        <p class="text-sm text-on-surface-variant mt-2">The company transitions exclusively to conflict-free Kimberley Process diamonds and fair-trade mine sourcing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Craftsmanship Section -->
+    <section class="py-20 max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5 space-y-6">
+                <span class="font-label-caps text-label-caps text-primary">HANDS OF ARTISANS</span>
+                <h2 class="font-headline-lg text-on-surface">The Craftsmanship</h2>
+                <p class="font-body-md text-on-surface-variant leading-relaxed">
+                    Every Aurelia creation is touched by master craftsmen (Kariagars) whose generational skills hand-finish details that digital printers cannot match. Under 10x magnification, every metal prong is hand-filed and burnished to prevent catches while maximizing diamond surface exposure to raw lighting.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary text-xl mt-1">draw</span>
+                        <div>
+                            <h4 class="font-label-caps text-xs text-on-surface font-semibold">1. RENDER & SCULPT</h4>
+                            <p class="text-xs text-on-surface-variant mt-1">Sketched manually on paper before converting to strict wax moulds for vacuum casting.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary text-xl mt-1">hardware</span>
+                        <div>
+                            <h4 class="font-label-caps text-xs text-on-surface font-semibold">2. PAVE SETTING</h4>
+                            <p class="text-xs text-on-surface-variant mt-1">Microscope setting process where tiny brilliant diamonds are set tightly on metal rails.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-primary text-xl mt-1">flare</span>
+                        <div>
+                            <h4 class="font-label-caps text-xs text-on-surface font-semibold">3. MIRROR POLISH</h4>
+                            <p class="text-xs text-on-surface-variant mt-1">Triple-action buffing checks using cotton wheels and rouge compounds to create deep metallic mirrors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Mock Imagery Section -->
+            <div class="lg:col-span-7 bg-surface-container border border-outline-variant/30 aspect-[16/10] flex items-center justify-center p-8 text-center relative overflow-hidden">
+                <!-- Using an artistic placeholder showing craftsmanship vibe -->
+                <div class="relative z-10 max-w-sm space-y-4">
+                    <span class="material-symbols-outlined text-primary text-5xl">auto_awesome</span>
+                    <h3 class="font-headline-md text-2xl text-on-surface">The Atelier Experience</h3>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">
+                        Where rough minerals, heavy solid ingots, and meticulous hand tools meet. Our design house operates strictly out of zero-waste eco-workspaces.
+                    </p>
+                </div>
+                <!-- Background overlay -->
+                <div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ethical Sourcing & Certifications -->
+    <section class="bg-primary/5 py-20 border-t border-outline-variant/20">
+        <div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop text-center space-y-12">
+            <div class="max-w-2xl mx-auto space-y-4">
+                <span class="font-label-caps text-label-caps text-primary">OUR PROMISE</span>
+                <h2 class="font-headline-lg text-on-surface">Ethical Sourcing & Certifications</h2>
+                <p class="font-body-md text-on-surface-variant leading-relaxed">
+                    Aurelia is committed to preserving environmental systems and human communities. We operate strict audit chains from rough extraction to final retail display.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Cert 1 -->
+                <div class="bg-white border border-outline-variant/30 p-8 space-y-4">
+                    <span class="material-symbols-outlined text-primary text-4xl">verified</span>
+                    <h4 class="font-label-caps text-xs font-bold text-on-surface">GIA & IGI GRADING</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">
+                        Every single diamond above 0.3 carats is laser-inscribed with a unique identifier mapping to an official GIA or IGI grading report verifying origin and quality metrics.
+                    </p>
+                </div>
+                <!-- Cert 2 -->
+                <div class="bg-white border border-outline-variant/30 p-8 space-y-4">
+                    <span class="material-symbols-outlined text-primary text-4xl">eco</span>
+                    <h4 class="font-label-caps text-xs font-bold text-on-surface">100% CONFLICT-FREE</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">
+                        We work strictly with Kimberley Process certified suppliers, sourcing minerals from transparent operations in Canada, South Africa, and Botswana.
+                    </p>
+                </div>
+                <!-- Cert 3 -->
+                <div class="bg-white border border-outline-variant/30 p-8 space-y-4">
+                    <span class="material-symbols-outlined text-primary text-4xl">spa</span>
+                    <h4 class="font-label-caps text-xs font-bold text-on-surface">RECYCLED NOBLE METALS</h4>
+                    <p class="text-xs text-on-surface-variant leading-relaxed">
+                        95% of our gold and platinum is melted and refined from recycled clean jewelry scrap, drastically reducing mining footprints.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Standardized Footer -->
+<footer class="bg-surface-container-low w-full pt-20 pb-10 border-t border-outline-variant/30">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-gutter max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+        <div class="col-span-2 md:col-span-1 mb-10 md:mb-0">
+            <div class="font-display-lg text-headline-lg text-primary mb-6">AURELIA</div>
+            <p class="font-body-md text-on-surface-variant text-sm mb-6">Elevating the human spirit through the art of fine jewelry since 1924.</p>
+            <div class="flex space-x-4">
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="public">public</span>
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="camera">camera</span>
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="share">share</span>
+            </div>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Company</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Our Story</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Craftsmanship</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Careers</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="about.html">Ethics</a>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Customer Support</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Contact Us</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="shipping-returns.html">Shipping &amp; Returns</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="faq.html">Care Guide</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="faq.html">FAQ</a>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Services</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Cleaning &amp; Polishing</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Ring Resizing</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="contact.html">Valuation</a>
+        </div>
+        <div class="col-span-2 md:col-span-1 mt-10 md:mt-0">
+            <h5 class="font-headline-md text-[18px] text-primary mb-4">Newsletter</h5>
+            <p class="font-body-md text-on-surface-variant text-sm mb-4">Subscribe to receive exclusive collection updates.</p>
+            <div class="relative">
+                <input class="w-full bg-transparent border-b border-outline-variant focus:border-primary text-on-surface font-body-md py-2 px-0 outline-none transition-all" placeholder="Email Address" type="email"/>
+                <button class="absolute right-0 bottom-2 text-primary hover:translate-x-1 transition-transform">
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop mt-20 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center text-sm font-body-md text-on-surface-variant">
+        <p>© 2024 Aurelia Fine Jewellery. All Rights Reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0 font-label-caps text-[10px]">
+            <a class="hover:text-primary transition-colors" href="privacy.html">Privacy Policy</a>
+            <a class="hover:text-primary transition-colors" href="terms.html">Terms of Service</a>
+            <a class="hover:text-primary transition-colors" href="privacy.html">Accessibility</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Dynamic JS Scripts -->
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+</body>
+</html>
