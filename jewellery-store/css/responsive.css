@@ -1,0 +1,22 @@
+/* Aurelia Fine Jewellery - Responsive Styles */
+
+@media (max-width: 768px) {
+    /* Adjust spacing and padding for sections on tablet/mobile views */
+    :root {
+        --margin-mobile: 20px;
+    }
+    
+    .py-section-gap {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+    
+    .mb-section-gap {
+        margin-bottom: 48px;
+    }
+
+    /* Keep headings readable on mobile screen widths */
+    h1 {
+        word-break: break-word;
+    }
+}

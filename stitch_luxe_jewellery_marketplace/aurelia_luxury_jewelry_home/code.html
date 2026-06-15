@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AURELIA | Fine Jewellery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;family=Source+Serif+4:wght@400;600;700&amp;family=Source+Sans+3:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-surface-variant": "#4d4635",
+                "on-tertiary-fixed": "#1b1d0e",
+                "surface-container-highest": "#e2e2e2",
+                "on-error-container": "#93000a",
+                "outline": "#7f7663",
+                "on-tertiary": "#ffffff",
+                "inverse-primary": "#e9c349",
+                "tertiary-fixed": "#e4e4cc",
+                "secondary-fixed": "#e5e2e1",
+                "tertiary-fixed-dim": "#c8c8b0",
+                "error": "#ba1a1a",
+                "tertiary": "#5e604d",
+                "on-tertiary-fixed-variant": "#474836",
+                "surface-container-low": "#f3f3f3",
+                "on-background": "#1a1c1c",
+                "inverse-surface": "#2f3131",
+                "on-primary-container": "#554300",
+                "on-surface": "#1a1c1c",
+                "on-error": "#ffffff",
+                "tertiary-container": "#b4b49d",
+                "on-secondary": "#ffffff",
+                "on-secondary-container": "#636262",
+                "primary-fixed": "#ffe088",
+                "surface-container-lowest": "#ffffff",
+                "surface-variant": "#e2e2e2",
+                "outline-variant": "#d0c5af",
+                "surface-container": "#eeeeee",
+                "on-primary-fixed-variant": "#574500",
+                "on-secondary-fixed": "#1c1b1b",
+                "on-primary": "#ffffff",
+                "primary-fixed-dim": "#e9c349",
+                "background": "#f9f9f9",
+                "surface": "#f9f9f9",
+                "primary-container": "#d4af37",
+                "on-tertiary-container": "#454634",
+                "on-primary-fixed": "#241a00",
+                "surface-container-high": "#e8e8e8",
+                "secondary": "#5f5e5e",
+                "surface-tint": "#735c00",
+                "on-secondary-fixed-variant": "#474746",
+                "surface-bright": "#f9f9f9",
+                "secondary-container": "#e2dfde",
+                "surface-dim": "#dadada",
+                "error-container": "#ffdad6",
+                "secondary-fixed-dim": "#c8c6c5",
+                "inverse-on-surface": "#f0f1f1",
+                "primary": "#735c00"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "container-max": "1200px",
+                "margin-desktop": "64px",
+                "unit": "8px",
+                "margin-mobile": "20px",
+                "gutter": "24px",
+                "edge-margin-desktop": "64px",
+                "edge-margin-mobile": "20px",
+                "section-gap": "120px"
+        },
+        "fontFamily": {
+                "body-lg": ["\"Source Serif 4\""],
+                "display-lg": ["Playfair Display"],
+                "label-sm": ["\"Source Sans 3\""],
+                "label-caps": ["\"Source Sans 3\""],
+                "body-md": ["\"Source Serif 4\""],
+                "headline-md": ["Playfair Display"],
+                "headline-lg": ["Playfair Display"],
+                "display-lg-mobile": ["Playfair Display"],
+                "price-display": ["\"Source Sans 3\""]
+        },
+        "fontSize": {
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "price-display": ["20px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}]
+        }
+      },
+    },
+  }
+</script>
+<style>
+        .gold-shimmer {
+            position: relative;
+            overflow: hidden;
+        }
+        .gold-shimmer::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(115, 92, 0, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: 0.6s;
+            opacity: 0;
+        }
+        .gold-shimmer:hover::after {
+            opacity: 1;
+            left: 100%;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+        .mask-vignette {
+            mask-image: radial-gradient(circle, black 50%, transparent 100%);
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f9f9f9; }
+        ::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 10px; }
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface selection:bg-primary selection:text-on-primary overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl border-b border-outline-variant">
+<div class="flex flex-col w-full max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop py-4">
+<div class="flex items-center justify-between">
+<!-- Branding -->
+<div class="font-display-lg text-headline-md md:text-headline-lg tracking-tighter text-primary cursor-pointer hover:scale-105 transition-transform duration-500">
+                    AURELIA
+                </div>
+<!-- Navigation Links (Desktop) -->
+<nav class="hidden md:flex items-center space-x-8">
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1" href="#">All Jewellery</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500" href="#">Gold</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500" href="#">Diamond</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500" href="#">Earrings</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500" href="#">Rings</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500" href="#">Pendants</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center space-x-6 text-on-surface">
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110" data-icon="search">search</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110" data-icon="favorite">favorite</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110" data-icon="person">person</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110" data-icon="shopping_bag">shopping_bag</span>
+</div>
+</div>
+</div>
+</header>
+<main class="mt-[80px]">
+<!-- Hero Banner Slider -->
+<section class="relative h-[800px] w-full overflow-hidden">
+<div class="h-full w-full flex transition-transform duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]" id="hero-slider">
+<!-- Slide 1: Bridal -->
+<div class="min-w-full h-full relative">
+<div class="absolute inset-0 bg-black/30 z-10"></div>
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A close-up, high-fashion photograph of a radiant bride wearing an intricate gold and diamond wedding set." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn6C2lTbE3bP-MRHopovFMMzy1_x5o1FRWq6dcusWaUrNtsuZXOhGXsLiufW4V-vbrn9CGupUZhtM8VnAtvP0Fn5bKL0D7CKaRq10mfavFQkF-QyUHacG5ZQgt_yg-Fd-o9oDy5wQ5eF-x_deb3AuqmGXICv5tE7deOUVu27x4TwU2ClECCDE-3SApf7LWeskjrjYADr_MZLb4WwrCd22qEmemMP-6lX7H4kRaK1CkgiA3sJ26twailRHCbCL4sTcAN3K_jBIpErk"/>
+<div class="relative z-20 h-full flex flex-col justify-center px-edge-margin-mobile md:px-edge-margin-desktop max-w-container-max mx-auto">
+<span class="font-label-caps text-label-caps text-primary-container bg-primary/10 w-fit px-3 py-1 mb-4 block backdrop-blur-sm">THE 2024 BRIDAL CAMPAIGN</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white mb-8 max-w-2xl drop-shadow-md">Vows of Eternal <br/>Brilliance</h1>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-3 bg-primary text-on-primary font-label-caps text-label-caps gold-shimmer hover:brightness-110 transition-all duration-500 shadow-lg">Shop Now</button>
+<button class="px-8 py-3 border border-white text-white font-label-caps text-label-caps hover:bg-white/10 transition-all duration-500 backdrop-blur-sm">Explore Collection</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Shop By Category Grid -->
+<section class="py-section-gap max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+<div class="flex items-end justify-between mb-16">
+<div>
+<span class="font-label-caps text-label-caps text-primary block mb-2">CURATED CATEGORIES</span>
+<h2 class="font-headline-lg text-on-surface">Shop By Category</h2>
+</div>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary underline underline-offset-8 transition-colors" href="#">View All Categories</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<!-- Earrings -->
+<div class="group relative aspect-[3/4] overflow-hidden cursor-pointer rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Stunning close-up of a pair of artisan diamond drop earrings" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmRfnzFlGyASXcLVrn2dBWZLt56uaiYBR14W0--bs3aCc_uMSv02crChSC53YdrVOs8jM4R_mnTzjOtI-k_Oj8WIW93fe_xL2tYdWv7yzk_UgeWBFqJfenHqXg01cIrePmqDaaqgUJwbbSXQg3W30IbWnB5fRbFK6K_jOaTgMhagrEo6Sv2V0pDjPNkhmcUSJnFFy5yU43QcLoAZDiIFF7wC1G_QXmfmvlw8VWG43aILIVWWdGFZ5-Y4jOsTs6ZJhfz6ht79QRoko"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<p class="font-headline-md text-white text-2xl">Earrings</p>
+</div>
+</div>
+<!-- Rings -->
+<div class="group relative aspect-[3/4] overflow-hidden cursor-pointer rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A macro shot of a solitary diamond engagement ring" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_6m9GT1nMENEk-Z9acogB6_R5B8YlOcsQdmUXypkw6ihL0XjPL0fpMICl4YwxtjiN4ITvIGaf6hpLMSVyxBYsXP7uC7iDb-YF4JpPyceZuyj8-z87DqXtWdH6RoFAERDkCdQCLWh7O9vwbS07xsBOZekg6T2unQ68PF8AGuIYnIa8WKpjsi1WSKPykFmJOuh_edJ1FfPsmYE1UnaIFjUen2CqzYOVdxqVmP3N2-kj_qNtwUF2Yy2ppm0urHNnR2E0Ugg0fvdTJ-A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<p class="font-headline-md text-white text-2xl">Rings</p>
+</div>
+</div>
+<!-- Pendants -->
+<div class="group relative aspect-[3/4] overflow-hidden cursor-pointer rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A delicate gold pendant featuring a rare sapphire centerpiece" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqMwnw6osHbJxu6NFy5DW0440cgamCpwOEcQGw1mCQ8TzDxgcfUqvs-ZDrP1kf4jJd4Ofr6HqvfuIIiTTGCWYVKgt8qui7bgC7Oh-WcJrVcjjQ2Px7oUYUrRFK8YcUMkMKii2K8tbNp5gQrD9RfkLR3qJ-AmNt6kO2PaOwY3L_8B2j7k4w33BGP6T0ijzgl4BlAXvA-Jsbf4wZO4Y2wb5Bnk2c5RSdVgQkwtg-dTzwVp9QyfyIqzBbUC7UUQJEVKnhiFPblUih9WU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<p class="font-headline-md text-white text-2xl">Pendants</p>
+</div>
+</div>
+<!-- Bangles -->
+<div class="group relative aspect-[3/4] overflow-hidden cursor-pointer rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A collection of stacked luxury gold bangles" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN4TEfNIz9boBd5IE4RGcFHtg1byoA0VeqOK-1nOHuMipI806Cpas-uppkp8iLVkxRgHnMKf3ntl4I2Y1mtTT4mTptJWyPwqhc7CfoSN0otWjNaGAx8fE664BOHSbRxzDCmED3AHxeEKldio6Hj0vwTEWY5XcnSarkV0oLCyt_Z0KrUX6_4gl8ZWzrr4FqYNPy_5VlNaSpnQEDzC_bFEfIGU2YFSpC2fy2zuKHjkrWunzk7uMpDEm-6sWMbTnsvRjqyKoxQwDq5c4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="absolute bottom-6 left-6">
+<p class="font-headline-md text-white text-2xl">Bangles</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Collections Section: Luxury Cards -->
+<section class="bg-surface-container-low py-section-gap border-y border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-primary block mb-2">CRAFTED NARRATIVES</span>
+<h2 class="font-headline-lg text-on-surface">Explore Our Collections</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Diamond Collection -->
+<div class="group relative bg-surface-container-lowest p-2 rounded-xl overflow-hidden transition-all duration-500 hover:shadow-2xl border border-outline-variant/20 hover:border-primary/30">
+<div class="aspect-square overflow-hidden mb-6 rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A series of diamond-encrusted jewelry pieces artistically arranged" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7MRzLsWxAmVypyBGTYbMMdQUCDsFyFXO0OWX6urEz5AmALTikJ5ool2CiyXS0zZoJ3AXFq22WifGADpA3UK-p531cScd5aQmywqXAwT1qQpZfVLBIt7N3vG3tobc4jCREUjunXHFF6gDNFTTVjEPxmZxZgd9shHnC3u8ndoc63dsWIP9N461MZZc9F5Y4CA0731RjM82jvFPY1g47M0JY9nvInUwLCjV8WmFEISJ2HLXQfaHcvJ2cHQElq7eVx2aGbDGW5OI6BX0"/>
+</div>
+<div class="p-4">
+<h3 class="font-headline-md text-on-surface mb-3">Celestial Diamonds</h3>
+<p class="font-body-md text-on-surface-variant mb-6 h-12 overflow-hidden">Inspired by the infinite brilliance of the night sky, featuring D-color flawless diamonds.</p>
+<button class="font-label-caps text-label-caps text-primary border-b border-primary/30 pb-1 hover:border-primary transition-all">Explore Collection</button>
+</div>
+</div>
+<!-- Heritage Gold -->
+<div class="group relative bg-surface-container-lowest p-2 rounded-xl overflow-hidden transition-all duration-500 hover:shadow-2xl border border-outline-variant/20 hover:border-primary/30">
+<div class="aspect-square overflow-hidden mb-6 rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Antique gold jewellery with a matte, hammered finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5vV0_vXXlz7ROmxx3y3Fa4-UweBsr2D0c3i6s2qpnUMOU8dsL-qtrSqh4kLA3BxjIaXS9kLKOXkgOFpY6SMMUMYj1EJsZBdxWyriLyoLzdOZa1AzuS9NizwGVr45qydCns8Jzn9uiz3IMMtyGWhDZ-4NiAk5vXDyYh7BvpKaV5LJqsk4WZYa2tZlJJtZCFUDPMQUoQevqO1iL5p9021oz15J9SqXVPoGuFu92oSlLVmXNjVcnhzZoxT2LMSG6OM8o5byGJ58ITz0"/>
+</div>
+<div class="p-4">
+<h3 class="font-headline-md text-on-surface mb-3">Heritage Gold</h3>
+<p class="font-body-md text-on-surface-variant mb-6 h-12 overflow-hidden">Celebrating 24k craftsmanship techniques passed through generations of master artisans.</p>
+<button class="font-label-caps text-label-caps text-primary border-b border-primary/30 pb-1 hover:border-primary transition-all">Explore Collection</button>
+</div>
+</div>
+<!-- Bridal edit -->
+<div class="group relative bg-surface-container-lowest p-2 rounded-xl overflow-hidden transition-all duration-500 hover:shadow-2xl border border-outline-variant/20 hover:border-primary/30">
+<div class="aspect-square overflow-hidden mb-6 rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A breathtaking bridal necklace with cascading white diamonds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMeyTOGO-3NN7UcF5_bgsPggmugulXyYc1icv6p2dsvWI1f-I8H09leVrVUJY9FLzQA1TWRzULkPVBebrzDAJ-cmAwXzshoMbL81sBcFHBnQWTFU0mEp90XBFMbUltDGD4dIZOACYwWLqdszhF2yFYcHTBB8f7zLKPj6_R3L09jnx406D9GPNkIvp6e6C_ZFM1V1MIEC2v8Y1508nKmzip-JAqW4ej3C4gG_YWdYuGS2m6iklrnVPnUzk-jXJR0gcD6TeOUDi47So"/>
+</div>
+<div class="p-4">
+<h3 class="font-headline-md text-on-surface mb-3">Modern Bridal</h3>
+<p class="font-body-md text-on-surface-variant mb-6 h-12 overflow-hidden">Minimalist silhouettes for the contemporary bride who values quiet elegance and purity.</p>
+<button class="font-label-caps text-label-caps text-primary border-b border-primary/30 pb-1 hover:border-primary transition-all">Explore Collection</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Trending Now: Carousel -->
+<section class="py-section-gap max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop overflow-hidden">
+<div class="flex items-center justify-between mb-16">
+<h2 class="font-headline-lg text-on-surface">Trending Now</h2>
+<div class="flex space-x-4">
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:border-primary text-on-surface transition-all rounded-full"><span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span></button>
+<button class="w-12 h-12 border border-outline-variant flex items-center justify-center hover:border-primary text-on-surface transition-all rounded-full"><span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+<div class="flex space-x-gutter overflow-x-auto pb-8 scrollbar-hide">
+<!-- Product Card 1 -->
+<div class="min-w-[300px] bg-white group cursor-pointer transition-all duration-500 hover:-translate-y-2 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="aspect-square overflow-hidden relative rounded-t-xl">
+<img class="w-full h-full object-cover" data-alt="Close-up of a luxury gold ring with a single baguette diamond." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfX9lyUWRCgQsAIfaDp5Cq2JxKQB2G8BbcKejyrRqdxa-2m-D0xlzFwt3ikXKZoy_n3L_kkm0J-52nl7vqkGiafHnXXgC3a_c1uscVcSyGH3KwqIouXvESRn0YKIG8hUEUsd971GTL2kxtPO69G0E_F1XPUe79ZMVzM0rBDhVI9PKxOOFJml_D8ILg2D8ZTK7fzBdZIUR1JqeQ3AmGez30BmArpKTDKNmolh6RvaezqpyoPv3eSVmZ8vxa5eMIKhxhFZfWbEQS2Dk"/>
+<div class="absolute top-4 right-4 bg-primary text-on-primary font-label-caps text-[10px] px-2 py-1 rounded">BESTSELLER</div>
+</div>
+<div class="p-6">
+<p class="font-label-caps text-on-surface-variant mb-1">AURELIA CLASSICS</p>
+<h4 class="font-body-lg text-on-surface mb-2">Baguette Solitaire Ring</h4>
+<div class="flex justify-between items-center">
+<span class="font-price-display text-primary text-xl">$1,250</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">18K GOLD • 4.5g</span>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="min-w-[300px] bg-white group cursor-pointer transition-all duration-500 hover:-translate-y-2 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="aspect-square overflow-hidden relative rounded-t-xl">
+<img class="w-full h-full object-cover" data-alt="A delicate rose gold chain necklace with a small diamond pendant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0HDcnTVM2fBiv5cChphqcFHZYYYvVsJa68IlNHUw7cQoo9qUadf0u_hDRus_FgZYBzW-KegSGXYMjg-S_PKNcMC9slSKj0gnsDav9ql9BgnMgWuG2OTBVKKMxf_Anx9G79RUCFddayLiTM3yh6-LgChYxRCDWnYLEQ36cF68SNIF_dQ0XQl-py-frky8ouZ3Rz-_yegmcfm7AXdU6-5596jhORRqhv-FqirCEd3h_PN5amiJyxohoJwboXuWHs1OLngQ99n5EgdM"/>
+</div>
+<div class="p-6">
+<p class="font-label-caps text-on-surface-variant mb-1">PETITE DIAMONDS</p>
+<h4 class="font-body-lg text-on-surface mb-2">Lumina Drop Necklace</h4>
+<div class="flex justify-between items-center">
+<span class="font-price-display text-primary text-xl">$980</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">14K GOLD • 2.8g</span>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="min-w-[300px] bg-white group cursor-pointer transition-all duration-500 hover:-translate-y-2 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="aspect-square overflow-hidden relative rounded-t-xl">
+<img class="w-full h-full object-cover" data-alt="Exquisite diamond hoop earrings in platinum." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArhlaA895Wtcps6WDj0P6nVUqjdCq6xrP70Mq0BDRvEAg9aNcv1Lt25g63hPLA_d5vRdN8ewIkF68bYzCo6dvW851780N2kVCXb5N-vs26E-TW4rooqWpMCdh9KCRtmqE6AM5RFR2Z_OWY-_77VxK5_yjgDnFLe7IOEMR286emQEi6l-Cw4SGNpRAn4UPEr4PDNHti6ohjumj65CrZdHKccgFihV81omLV0ke9YJl76YqMQAhLyd2ljytBF9dDEZRU2Boz2SH50uc"/>
+</div>
+<div class="p-6">
+<p class="font-label-caps text-on-surface-variant mb-1">SIGNATURE HOOPS</p>
+<h4 class="font-body-lg text-on-surface mb-2">Infinity Diamond Hoops</h4>
+<div class="flex justify-between items-center">
+<span class="font-price-display text-primary text-xl">$2,400</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">PLATINUM • 8.2g</span>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="min-w-[300px] bg-white group cursor-pointer transition-all duration-500 hover:-translate-y-2 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="aspect-square overflow-hidden relative rounded-t-xl">
+<img class="w-full h-full object-cover" data-alt="A man's heavy gold signet ring with an embossed crest." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9XmkfTXwDcM8IoQZarRBHerBpW07UJvd8OX0oBlrYldklWhLi9mbAkHa67uvAAh0ML6P6AA8I9-Cbc7MN4xA62f0lwjnhH83GUWxTlO40EaN497b-jz1HO5oGBpx7WO7_VmFjkg5n6RLS4QPGZlDapFmIgsHDRELOVaT5DtC_smbN29lGaRFw4Tj95G4kJzlNCZrnl24adi07cj_qrDe1zkf_SBlhdyq0lTTZcGCQFpOm6QPndpIc4GEXw51f1eFaMqv4_MZbx2I"/>
+</div>
+<div class="p-6">
+<p class="font-label-caps text-on-surface-variant mb-1">MODERN MEN</p>
+<h4 class="font-body-lg text-on-surface mb-2">Titan Signet Ring</h4>
+<div class="flex justify-between items-center">
+<span class="font-price-display text-primary text-xl">$1,850</span>
+<span class="font-label-caps text-[10px] text-on-surface-variant">18K GOLD • 12g</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- New Arrivals: Bento Grid Style -->
+<section class="py-section-gap bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-16">
+<div>
+<h2 class="font-headline-lg text-on-surface mb-6">500+ New Arrivals</h2>
+<p class="font-body-lg text-on-surface-variant max-w-md">The seasonal drop of masterpieces is here. Discover our latest explorations in fluidity and light.</p>
+</div>
+<div class="flex md:justify-end">
+<button class="px-12 py-4 bg-primary text-on-primary font-label-caps text-label-caps hover:scale-105 transition-transform duration-500 shadow-md">Shop New Collection</button>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="col-span-2 row-span-2 relative group overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-all duration-[1s]" data-alt="A dramatic editorial photo of a model wearing a high-jewelry diamond collier." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSnmaDV-ZeBGJFi4y_mOghG4pfgFKew9NbJ7w3E_px9Ks95_XRRrMYZDKMmfPw2be2S-OrblgZjDCNwya0Nq--qXOgIal3pyOQ7CMP-QLsDXIO75__WlcolbHXORJh_B8sZuixJxJOlI-bArxoYm8rqLw-vt4B3yyfgScpG1Stc9zasyUaTOnorbTyU2mCwB4DR2lnFWtzauuSV4cUXwsBbmk4degj_4Jy6EaDYVNZauki-z7nPrrczrL6SuxH2sJYJfmZpboJPnA"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-all"></div>
+<div class="absolute bottom-10 left-10">
+<h3 class="font-display-lg text-4xl text-white drop-shadow-md">The Zenith Edit</h3>
+</div>
+</div>
+<div class="aspect-square overflow-hidden group relative rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" data-alt="Close up of gold stud earrings with rare emeralds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-e4Z0iTXGWcXHcZwsJtuGjYQQKW7yW5cs5PasNPHGsU2NytvT4L8xo24JH-zgAWISt0mhKjle2admv7aKp9Hs2UddhvYvW_bc1YJ3BUVyTUmjj2muzDpjMHk93RPZS9bIXy5hk_6QrYLSp6pH11hrQYCQuh3Q4b03sZPQQs3WZeAsKz6xLhHgnGt3SsQZPUP3UqzPU2Wrda1nEzCbJeagaVvTdCurW_gABrmWXG5z3Jg4aBBlvYKWT9SSx1p_TF0nJ9HrqdJG1d4"/>
+</div>
+<div class="aspect-square overflow-hidden group relative rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" data-alt="Diamond bracelet on a dark satin background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA273gxTIyeSS7jS6G85Qy5IJ4F8r1bABz-CWfE1TflH8tdm_2NoG4FpbrX2tcU3oPBOv4lv-tpTXWuaYVLP5_uDwyhvh_VJn9HF9V_hzjPNHMEkZdrg3_NL-FCoxTyxtsSECWtVRndIgmIU-br9x3snu9ZDIvlfkzU8gc9qffoOyg_rUJegeOEIl3s-MKuXy2r2yyXNUBmInaX1d98yRJ46r2mYNrrGCTi0ZQABB0DPuXMD7b5S7VLPBABkPGt1Caq4S9rh3rwo5g"/>
+</div>
+<div class="aspect-square overflow-hidden group relative rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" data-alt="Luxurious golden cuff with intricate geometric patterns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdV-LUILrnuw_sKceZvFw6g4OGWV7Lg4PtWABjQGp-GrDKAuIXvo4Tn3lhy-fXZouiwwVpdpdzt-ABvhrCnhJdau_fWZkK_5or9L9lWGW7sbymzM2CiBwNfXXr5pTY8qbPJDJoHALAYZde9bJWhlqI6MVE82BKHIbZiVWn86QxvBRKfm6H40bv5LMfZsEnPkSIYhbQfmf4o2Q9KoPY86YzzFDM54IibkrltVEgbUN9jB9V4Thlwy2WfWNjuM0ZX5GcXsG7rQOFVyo"/>
+</div>
+<div class="aspect-square overflow-hidden group relative rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700" data-alt="Close macro shot of a pearl and diamond pendant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtuEc4d_Q0eXZcQPwlCX6-7Wbs-lKPxA5mg-H4KIj07lCf-Lhvohr5dy3wNCIMkpxxqxaLo5rU1Q0a5IiJY1OHl1RrlK5Wcgu508QOzt_1QcEkqqYkdpM1ecKTtVF1_b_oZiVXvY_QbbwNPMvOAvQcx0FWJq3Z8IfuWu2yfJEvQ3I8h-RVBCmWPqIlKhsgpverbMNiXLs4RZKDC6gcmJ6-1WKMyFC3eL6VYXZoCdwEGAeMzc14Og7mcC_c_ieNbZNsZU4oBTfvPVc"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Diamond Styling: Editorial Section -->
+<section class="py-section-gap relative overflow-hidden h-[716px] flex items-center">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60" data-alt="A moody lifestyle photograph of a luxury wardrobe featuring silk fabrics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBx3P-ekocPqbP_SRNwR0MgZmc1EY1HOdvls9eLWUUMUvi2z1t7ne5XrED2eEt_DBXwlOZ7Tdeq3eeWjhswXH7BMUXa7lRzp36GwlqNvwr-tScrVu7NmMQFSfxz1csq8e-S3RpyPZQc72qGYfjMv8M_xjWyj4ciAFjrDOS8iZ1gdjx2XdcD9qO6sZoFLV_tbNELLzXAhv4AhwqkDkiDxUzMApGkuCIGq_baNcgaREXq59oEJBdAta-Tg2a4C6HIgE1ZM5Ovd1tox_c"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface-container-lowest via-surface-container-lowest/80 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop w-full">
+<div class="max-w-xl">
+<span class="font-label-caps text-label-caps text-primary block mb-4">THE ART OF ADORNMENT</span>
+<h2 class="font-headline-lg text-on-surface mb-6">Diamond Styling Guide</h2>
+<p class="font-body-lg text-on-surface-variant mb-10">Master the language of light. Our editorial guide shows you how to stack, layer, and style our finest pieces for any occasion.</p>
+<button class="group flex items-center space-x-4 font-label-caps text-label-caps text-on-surface">
+<span class="w-12 h-[1px] bg-primary group-hover:w-20 transition-all duration-500"></span>
+<span class="group-hover:text-primary transition-colors">READ THE EDITORIAL</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Trust Section -->
+<section class="py-section-gap max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-on-surface">Our Assurance</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<div class="text-center p-8 bg-white border border-outline-variant/30 hover:border-primary/50 transition-all rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="auto_awesome">auto_awesome</span>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-2">MASTER CRAFTSMANSHIP</h4>
+<p class="font-body-md text-on-surface-variant text-sm">Every piece is hand-finished by our artisan masters.</p>
+</div>
+<div class="text-center p-8 bg-white border border-outline-variant/30 hover:border-primary/50 transition-all rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="verified_user">verified_user</span>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-2">CERTIFIED QUALITY</h4>
+<p class="font-body-md text-on-surface-variant text-sm">GIA and IGI certified conflict-free diamonds.</p>
+</div>
+<div class="text-center p-8 bg-white border border-outline-variant/30 hover:border-primary/50 transition-all rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="public">public</span>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-2">ETHICAL SOURCING</h4>
+<p class="font-body-md text-on-surface-variant text-sm">Responsibly sourced metals and stones.</p>
+</div>
+<div class="text-center p-8 bg-white border border-outline-variant/30 hover:border-primary/50 transition-all rounded-xl shadow-sm">
+<span class="material-symbols-outlined text-primary text-4xl mb-4" data-icon="diamond">diamond</span>
+<h4 class="font-label-caps text-label-caps text-on-surface mb-2">LIFETIME WARRANTY</h4>
+<p class="font-body-md text-on-surface-variant text-sm">We stand behind the brilliance of our work forever.</p>
+</div>
+</div>
+</section>
+<!-- Consultation Hub -->
+<section class="mb-section-gap max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+<div class="bg-surface-container relative p-12 md:p-24 overflow-hidden rounded-2xl border border-outline-variant/20">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-30 pointer-events-none hidden md:block">
+<img class="w-full h-full object-cover mask-vignette" data-alt="An interior shot of a high-end, private jewelry boutique" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGJfMGF3SZ1opyUNNHxPni5VCch-icDRweNj7PCn6BtV3gGmvlmiN9m_p_7ANdQhYrWSqLDZQqLmWNMsyv36jkLtPSwBzlgEddZn9BBlx7CNHk6JdbC-g0LmLhJjJyv5rcFGvwiZQ7vJ9f7_yUZkqxA8AMdBshi00gu-qouGaJqFentbvj4Ldrs90RjazDQfg9ixTNkujrDvVdCEy-0ZDHyaxY2QJJNBKTTUccgV57RJ27FvI7buJq01Qpr6A-y8tsoa_71AixzoE"/>
+</div>
+<div class="relative z-10 max-w-lg">
+<h2 class="font-headline-lg text-on-surface mb-6">Your Personal Bespoke Experience</h2>
+<p class="font-body-lg text-on-surface-variant mb-10">Whether you are choosing an engagement ring or a legacy piece, our experts are here to guide your journey.</p>
+<div class="flex flex-wrap gap-6">
+<a class="flex items-center space-x-3 text-primary font-label-caps text-label-caps group" href="#">
+<span class="material-symbols-outlined" data-icon="store">store</span>
+<span class="border-b border-primary/0 group-hover:border-primary transition-all">VISIT STORE</span>
+</a>
+<a class="flex items-center space-x-3 text-primary font-label-caps text-label-caps group" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="border-b border-primary/0 group-hover:border-primary transition-all">BOOK APPOINTMENT</span>
+</a>
+<a class="flex items-center space-x-3 text-primary font-label-caps text-label-caps group" href="#">
+<span class="material-symbols-outlined" data-icon="support_agent">support_agent</span>
+<span class="border-b border-primary/0 group-hover:border-primary transition-all">TALK TO AN EXPERT</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low w-full pt-section-gap pb-10 border-t border-outline-variant/30">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-gutter max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+<div class="col-span-2 md:col-span-1 mb-10 md:mb-0">
+<div class="font-display-lg text-headline-lg text-primary mb-6">AURELIA</div>
+<p class="font-body-md text-on-surface-variant text-sm mb-6">Elevating the human spirit through the art of fine jewelry since 1924.</p>
+<div class="flex space-x-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="facebook">face_nod</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="instagram">infrared</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="pinterest">interests</span>
+</div>
+</div>
+<div class="flex flex-col space-y-4">
+<h5 class="font-headline-md text-[18px] text-primary mb-2">Company</h5>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Our Heritage</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Ethical Sourcing</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Careers</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Press</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h5 class="font-headline-md text-[18px] text-primary mb-2">Customer Support</h5>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact Us</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Shipping &amp; Returns</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Track Your Order</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">FAQ</a>
+</div>
+<div class="flex flex-col space-y-4">
+<h5 class="font-headline-md text-[18px] text-primary mb-2">Services</h5>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Bespoke Design</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Jewelry Care</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Valuations</a>
+<a class="font-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Gift Registry</a>
+</div>
+<div class="col-span-2 md:col-span-1 mt-10 md:mt-0">
+<h5 class="font-headline-md text-[18px] text-primary mb-4">Newsletter</h5>
+<p class="font-body-md text-on-surface-variant text-sm mb-4">Subscribe to receive exclusive collection updates.</p>
+<div class="relative">
+<input class="w-full bg-transparent border-b border-outline-variant focus:border-primary text-on-surface font-body-md py-2 px-0 outline-none transition-all" placeholder="Email Address" type="email"/>
+<button class="absolute right-0 bottom-2 text-primary hover:translate-x-1 transition-transform">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop mt-20 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center text-sm font-body-md text-on-surface-variant">
+<p>© 2024 Aurelia Fine Jewellery. All Rights Reserved.</p>
+<div class="flex space-x-6 mt-4 md:mt-0">
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="hover:text-primary transition-colors" href="#">Cookie Settings</a>
+</div>
+</div>
+</footer>
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('py-1', 'shadow-sm');
+                    header.classList.remove('py-4');
+                } else {
+                    header.classList.add('py-4');
+                    header.classList.remove('py-1', 'shadow-sm');
+                }
+            });
+
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const heroImage = document.querySelector('#hero-slider img');
+                if(heroImage) {
+                    heroImage.style.transform = `translateY(${scrolled * 0.2}px)`;
+                }
+            });
+        });
+    </script>
+</body></html>

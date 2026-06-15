@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AURELIA | Fine Jewellery Collections</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#4d4635",
+                    "on-tertiary-fixed": "#1b1d0e",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-error-container": "#93000a",
+                    "outline": "#7f7663",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#e9c349",
+                    "tertiary-fixed": "#e4e4cc",
+                    "secondary-fixed": "#e5e2e1",
+                    "tertiary-fixed-dim": "#c8c8b0",
+                    "error": "#ba1a1a",
+                    "tertiary": "#5e604d",
+                    "on-tertiary-fixed-variant": "#474836",
+                    "surface-container-low": "#f3f3f3",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "on-primary-container": "#554300",
+                    "on-surface": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#b4b49d",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#636262",
+                    "primary-fixed": "#ffe088",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e2e2e2",
+                    "outline-variant": "#d0c5af",
+                    "surface-container": "#eeeeee",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#e9c349",
+                    "background": "#f9f9f9",
+                    "surface": "#f9f9f9",
+                    "primary-container": "#d4af37",
+                    "on-tertiary-container": "#454634",
+                    "on-primary-fixed": "#241a00",
+                    "surface-container-high": "#e8e8e8",
+                    "secondary": "#5f5e5e",
+                    "surface-tint": "#735c00",
+                    "on-secondary-fixed-variant": "#474746",
+                    "surface-bright": "#f9f9f9",
+                    "secondary-container": "#e2dfde",
+                    "surface-dim": "#dadada",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "inverse-on-surface": "#f0f1f1",
+                    "primary": "#735c00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "edge-margin-desktop": "64px",
+                    "edge-margin-mobile": "20px",
+                    "section-gap": "96px"
+            },
+            "fontFamily": {
+                    "body-lg": ["\"Source Serif 4\""],
+                    "display-lg": ["Playfair Display"],
+                    "label-sm": ["\"Source Sans 3\""],
+                    "label-caps": ["\"Source Sans 3\""],
+                    "body-md": ["\"Source Serif 4\""],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "price-display": ["\"Source Sans 3\""]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "price-display": ["20px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+    <!-- Style Sheet Mappings -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md overflow-x-hidden">
+
+<!-- Standardized Header / TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl border-b border-outline-variant py-4 transition-all duration-300">
+    <div class="flex flex-col w-full max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+        <div class="flex items-center justify-between">
+            <!-- Mobile Menu hamburger icon -->
+            <button class="md:hidden text-primary header-menu-btn focus:outline-none">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            
+            <!-- Branding -->
+            <a href="index.html" class="font-display-lg text-[24px] md:text-headline-lg tracking-tighter text-primary cursor-pointer hover:scale-105 transition-transform duration-500">
+                AURELIA
+            </a>
+            
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a class="nav-link font-label-caps text-label-caps text-primary border-b border-primary pb-1" id="nav-all" href="collection.html">All Jewellery</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-gold" href="collection.html">Gold</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-diamond" href="collection.html">Diamond</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-earrings" href="collection.html">Earrings</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-rings" href="collection.html">Rings</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-pendants" href="collection.html">Pendants</a>
+            </nav>
+            
+            <!-- Actions -->
+            <div class="flex items-center space-x-6 text-on-surface">
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 header-search-btn">search</span>
+                <span class="relative material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110">
+                    favorite
+                    <span class="wishlist-badge hidden absolute -top-1.5 -right-1.5 bg-primary text-on-primary text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+                </span>
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110">person</span>
+                <span class="relative material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 header-cart-btn">
+                    shopping_bag
+                    <span class="cart-badge hidden absolute -top-1.5 -right-1.5 bg-primary text-on-primary text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="pt-32 pb-section-gap max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+    <!-- Breadcrumbs & Header -->
+    <section class="mb-12">
+        <nav class="flex items-center gap-2 mb-4 text-on-surface-variant font-label-caps text-[10px]">
+            <a class="hover:text-primary transition-colors" href="index.html">HOME</a>
+            <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+            <span class="text-primary">ALL JEWELLERY</span>
+        </nav>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div>
+                <h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-2">The Celestial Suite</h2>
+                <p class="text-on-surface-variant font-body-md max-w-2xl">Handcrafted masterpieces reflecting the infinite brilliance of the stars. Explore our curated selection of 18K gold and GIA-certified diamonds.</p>
+            </div>
+            <div class="text-on-surface-variant font-label-caps text-sm tracking-wider">
+                248 RESULTS
+            </div>
+        </div>
+    </section>
+
+    <div class="flex flex-col lg:flex-row gap-gutter">
+        <!-- Sidebar Filters -->
+        <aside class="w-full lg:w-64 flex-none mb-10 lg:mb-0">
+            <div class="sticky top-28 space-y-10">
+                <div>
+                    <h3 class="font-label-caps text-label-caps text-primary mb-6">CATEGORY</h3>
+                    <ul class="space-y-3 font-body-md text-on-surface-variant text-sm">
+                        <li class="flex items-center justify-between cursor-pointer hover:text-primary transition-colors"><span>Necklaces</span><span class="text-[12px] opacity-70">42</span></li>
+                        <li class="flex items-center justify-between cursor-pointer text-primary transition-colors font-semibold"><span>Rings</span><span class="text-[12px] opacity-70">86</span></li>
+                        <li class="flex items-center justify-between cursor-pointer hover:text-primary transition-colors"><span>Earrings</span><span class="text-[12px] opacity-70">54</span></li>
+                        <li class="flex items-center justify-between cursor-pointer hover:text-primary transition-colors"><span>Bracelets</span><span class="text-[12px] opacity-70">31</span></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-label-caps text-label-caps text-primary mb-6">METAL</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <button class="px-3 py-1 border border-primary text-primary font-label-caps text-[10px] bg-primary/5">18K YELLOW GOLD</button>
+                        <button class="px-3 py-1 border border-outline-variant text-on-surface-variant font-label-caps text-[10px] hover:border-primary/50">PLATINUM</button>
+                        <button class="px-3 py-1 border border-outline-variant text-on-surface-variant font-label-caps text-[10px] hover:border-primary/50">ROSE GOLD</button>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-label-caps text-label-caps text-primary mb-6">PRICE RANGE</h3>
+                    <input class="w-full h-1 bg-surface-container-highest appearance-none accent-primary cursor-pointer focus:outline-none" type="range"/>
+                    <div class="flex justify-between mt-4 font-label-caps text-[10px] text-on-surface-variant">
+                        <span>$1,000</span>
+                        <span>$50,000+</span>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-label-caps text-label-caps text-primary mb-6">COLLECTION</h3>
+                    <ul class="space-y-3 font-body-md text-on-surface-variant text-sm">
+                        <li class="flex items-center gap-3 cursor-pointer">
+                            <div class="w-4 h-4 border border-outline flex items-center justify-center"><div class="w-2 h-2 bg-primary"></div></div>
+                            <span>Aurelia Heritage</span>
+                        </li>
+                        <li class="flex items-center gap-3 cursor-pointer">
+                            <div class="w-4 h-4 border border-outline"></div>
+                            <span>Celestial Glow</span>
+                        </li>
+                        <li class="flex items-center gap-3 cursor-pointer">
+                            <div class="w-4 h-4 border border-outline"></div>
+                            <span>Lunar Silk</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Product Grid -->
+        <div class="flex-1">
+            <!-- Sorting & View -->
+            <div class="flex items-center justify-between mb-8 pb-4 border-b border-outline-variant/30">
+                <div class="flex gap-4">
+                    <button class="flex items-center gap-2 font-label-caps text-[11px] text-on-surface border border-outline-variant px-4 py-2 hover:border-primary transition-colors bg-surface-container-lowest">
+                        SORT: POPULAR <span class="material-symbols-outlined text-[16px]">expand_more</span>
+                    </button>
+                </div>
+                <div class="flex gap-2">
+                    <button class="p-2 text-primary border border-primary/20 bg-primary/10"><span class="material-symbols-outlined">grid_view</span></button>
+                    <button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined">view_agenda</span></button>
+                </div>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-gutter gap-y-16">
+                <!-- Card 1 -->
+                <div class="luxury-card group cursor-pointer relative border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
+                    <div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A macro studio photograph of an exquisite 18K yellow gold ring with a large, brilliant-cut solitaire diamond." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3677yK0d5ELEEwBG-MvWctK2cPfNT---RWhxmudWjMuZ9qOR_vTgLctg8jvZZcSObeGQKQA-zxHE_PYExLYoxEs6ETEOgOijSBuTL06nQqTQqTs3Uiss2CBIkS44AFHhhZCsdAnR7Jm7JCRFZStQ8RLpo4pwmuBX1tZzgkxcabeOytFyDDwZwAaCfWFZr_85NaeTQb4BHrEf6T9ZSoxrZJxMPssGr9bGHG5XHctZFwkG1nvkZAryTdkciurO8aVwKJI--bySqV1w"/>
+                        <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">favorite</span>
+                        </button>
+                        <div class="quick-view-overlay absolute bottom-0 left-0 w-full p-4 bg-surface-container-lowest/90 backdrop-blur-md border-t border-primary/20 flex flex-col items-center">
+                            <span class="font-label-caps text-[10px] text-primary mb-2">QUICK VIEW</span>
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-[#D4AF37] border border-black/10"></div>
+                                <div class="w-3 h-3 rounded-full bg-[#E5E4E2] border border-black/10"></div>
+                                <div class="w-3 h-3 rounded-full bg-[#B76E79] border border-black/10"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="font-label-caps text-[10px] text-primary">AURELIA HERITAGE</p>
+                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html">Aurora Solitaire Diamond Ring</a></h4>
+                        <div class="flex items-center justify-between">
+                            <p class="font-price-display text-on-surface font-semibold">$12,400</p>
+                            <p class="font-label-caps text-[10px] text-on-surface-variant font-medium">6.42G GOLD</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="luxury-card group cursor-pointer relative border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
+                    <div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Close-up photograph of a pair of intricate diamond chandelier earrings crafted in white gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn5IxdGD9y7_aZQAR585uX8bfmnEE-i_lnKWjfnDpRFARAkG4fe0bky_6xCzd_wH7-vXxBmX_YlXMlggt2op8_vniYNpXtAg3C6n1vfVaXdam2oxSks7YEwITQWhcmp2DvE4NH4p6Hk-m5CFG9N_UZQtPwKWSRdf-XEcnh0gCnUFmWWXJajAkWjbOeYI4RfD2NUW6JxdKWLXLmDISpI_clF3rF0drM0_bm2l_ZoK33wr2mKcN5PtaTDnqXaLAljvppHpjSqRrDiKg"/>
+                        <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">favorite</span>
+                        </button>
+                        <div class="quick-view-overlay absolute bottom-0 left-0 w-full p-4 bg-surface-container-lowest/90 backdrop-blur-md border-t border-primary/20 flex flex-col items-center">
+                            <span class="font-label-caps text-[10px] text-primary mb-2">QUICK VIEW</span>
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-[#E5E4E2] border border-black/10"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="font-label-caps text-[10px] text-primary">CELESTIAL GLOW</p>
+                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html">Starlight Cascade Earrings</a></h4>
+                        <div class="flex items-center justify-between">
+                            <p class="font-price-display text-on-surface font-semibold">$8,950</p>
+                            <p class="font-label-caps text-[10px] text-on-surface-variant font-medium">12.1G GOLD</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="luxury-card group cursor-pointer relative border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
+                    <div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="An editorial luxury product shot featuring a heavy 18K yellow gold chain necklace with a singular, large emerald-cut pendant." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjsHuOWQs-7itBMvsGZZd9mnfTrikU6TOAUa2TxD5qdWzCv3Qje5hhlbmTAG9zH0TetW_zoZGwh8f682xjSF9OwBlIJmfb-CTO5ZlRXg6wM30FPK_9t31-h2sCTioKJCYgQZgepGZGAQMzUdyQ1SJpxuFaiVboc63xG72Jcslv2CvHJuqDHzSrT6eMBeCR9UvhrZjrtn3KPEYjY69LPjg4KtsJ8emDLyVgWjjVuyhzaoZxKL9PCexRIOpc-i2b2zsxhJD5a2oicqk"/>
+                        <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">favorite</span>
+                        </button>
+                        <div class="quick-view-overlay absolute bottom-0 left-0 w-full p-4 bg-surface-container-lowest/90 backdrop-blur-md border-t border-primary/20 flex flex-col items-center">
+                            <span class="font-label-caps text-[10px] text-primary mb-2">QUICK VIEW</span>
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-[#D4AF37] border border-black/10"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="font-label-caps text-[10px] text-primary">LUNAR SILK</p>
+                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html">Emerald-Cut Legacy Pendant</a></h4>
+                        <div class="flex items-center justify-between">
+                            <p class="font-price-display text-on-surface font-semibold">$15,200</p>
+                            <p class="font-label-caps text-[10px] text-on-surface-variant font-medium">18.5G GOLD</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="luxury-card group cursor-pointer relative border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
+                    <div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A collection of three minimalist gold bangles in rose, yellow, and white gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGS_nF2Pazw2__8Q1ivOg5ClAN4fuJJZxrj-K2vxGArHFCMyjoFNxOWfUGPK9RT4Aq9OgPf6wxfMqIq1Hzll4KxcM0nYZtrH_7CkU5aIm0uGZ6HyCj82ua7Tovp8KXrf0sG4GhwIYxg0L2oRM_xDPQv9NWedXh-XcMSFBfl6S4xo6tBruxK3ZRFXznb_rMbnl78jxCouYkhgEA_mRG03ZwQRFW68Y4G_gVZgUQ36bGsggaaZTZPR9vuHoyEf9HD0MJpmdPjppEtes"/>
+                        <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">favorite</span>
+                        </button>
+                        <div class="quick-view-overlay absolute bottom-0 left-0 w-full p-4 bg-surface-container-lowest/90 backdrop-blur-md border-t border-primary/20 flex flex-col items-center">
+                            <span class="font-label-caps text-[10px] text-primary mb-2">QUICK VIEW</span>
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-[#B76E79] border border-black/10"></div>
+                                <div class="w-3 h-3 rounded-full bg-[#D4AF37] border border-black/10"></div>
+                                <div class="w-3 h-3 rounded-full bg-[#E5E4E2] border border-black/10"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="font-label-caps text-[10px] text-primary">AURELIA HERITAGE</p>
+                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html">Trinity Silk Bangles</a></h4>
+                        <div class="flex items-center justify-between">
+                            <p class="font-price-display text-on-surface font-semibold">$4,800</p>
+                            <p class="font-label-caps text-[10px] text-on-surface-variant font-medium">24.0G GOLD</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="luxury-card group cursor-pointer relative border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
+                    <div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Exotic ruby and diamond drop earrings displayed on a dark grey silk cushion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuS-f3h2MSWo5tq7e6J5LXt4rgyeaFCHv74-pzmhUR_fg7apxV_Q0cckVE96F9Rz28r-bNBhm8p8W0k5ol6HhnrHOw5Xfl0ygaukc532Iq766cv-FfOX_3MVtCqCuElV4QOYQUo6u7-lbxn-297NytxAgKo7-Q5IDP5LU5GEzTt_0SmO-TXybd7iPiEiNooMMgdLIKSynZQIgNNlT4xEEwpJy33r6FPsc4p7cff_iZG89-Xricq1Vy6hBnualXmtuZZVTjZXEMqxU"/>
+                        <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">favorite</span>
+                        </button>
+                        <div class="quick-view-overlay absolute bottom-0 left-0 w-full p-4 bg-surface-container-lowest/90 backdrop-blur-md border-t border-primary/20 flex flex-col items-center">
+                            <span class="font-label-caps text-[10px] text-primary mb-2">QUICK VIEW</span>
+                            <div class="flex gap-2">
+                                <div class="w-3 h-3 rounded-full bg-[#B76E79] border border-black/10"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="font-label-caps text-[10px] text-primary">CELESTIAL GLOW</p>
+                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html">Royal Crimson Drops</a></h4>
+                        <div class="flex items-center justify-between">
+                            <p class="font-price-display text-on-surface font-semibold">$22,100</p>
+                            <p class="font-label-caps text-[10px] text-on-surface-variant font-medium">10.4G GOLD</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="luxury-card group cursor-pointer relative border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
+                    <div class="relative overflow-hidden bg-surface-container-low aspect-[4/5] mb-6">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A minimalist platinum band with a hidden pave diamond setting on the inner edge." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJjuYDeupTmCXaiHoC5zKET5WkOch_nW14h9IdneKm9hrt6dknqWkViLTWF3AMjVWI38z21eOz_xko0iOlHkuE40dXluPDqXdKgc1MLzSxlLT_OQV9q_Z2MVyUhPuFOTabupsW_kuRrDkDiK_L6ziiwndW_iuRJNhC0HXjBpQYB6VsBGgXrPCnRBYdFEEhxeWkceL7245JPyJdBvTxqI6bDgqL9UHmbUdv-XgITalddxXR8F1YYtWJjbrncnVisqxzLDzsvvSJp78"/>
+                        <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">favorite</span>
+                        </button>
+                        <div class="quick-view-overlay absolute bottom-0 left-0 w-full p-4 bg-surface-container-lowest/90 backdrop-blur-md border-t border-primary/20 flex flex-col items-center">
+                            <span class="font-label-caps text-[10px] text-primary mb-2">QUICK VIEW</span>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <p class="font-label-caps text-[10px] text-primary">LUNAR SILK</p>
+                        <h4 class="font-headline-md text-body-lg text-on-surface group-hover:text-primary transition-colors duration-500"><a href="product.html">Architect Platinum Band</a></h4>
+                        <div class="flex items-center justify-between">
+                            <p class="font-price-display text-on-surface font-semibold">$3,200</p>
+                            <p class="font-label-caps text-[10px] text-on-surface-variant font-medium">PLATINUM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="mt-20 flex items-center justify-center gap-8">
+                <button class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary flex items-center gap-2 transition-colors focus:outline-none">
+                    <span class="material-symbols-outlined text-[16px]">west</span> PREVIOUS
+                </button>
+                <div class="flex gap-4 font-label-caps text-[11px]">
+                    <span class="text-primary border-b border-primary">01</span>
+                    <span class="text-on-surface-variant hover:text-primary cursor-pointer transition-colors">02</span>
+                    <span class="text-on-surface-variant hover:text-primary cursor-pointer transition-colors">03</span>
+                    <span class="text-on-surface-variant">...</span>
+                    <span class="text-on-surface-variant hover:text-primary cursor-pointer transition-colors">12</span>
+                </div>
+                <button class="font-label-caps text-[11px] text-on-surface-variant hover:text-primary flex items-center gap-2 transition-colors focus:outline-none">
+                    NEXT <span class="material-symbols-outlined text-[16px]">east</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Standardized Footer -->
+<footer class="bg-surface-container-low w-full pt-20 pb-10 border-t border-outline-variant/30">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-gutter max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+        <div class="col-span-2 md:col-span-1 mb-10 md:mb-0">
+            <div class="font-display-lg text-headline-lg text-primary mb-6">AURELIA</div>
+            <p class="font-body-md text-on-surface-variant text-sm mb-6">Elevating the human spirit through the art of fine jewelry since 1924.</p>
+            <div class="flex space-x-4">
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="public">public</span>
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="camera">camera</span>
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="share">share</span>
+            </div>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Company</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Our Story</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Craftsmanship</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Careers</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Ethics</a>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Customer Support</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Contact Us</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Shipping &amp; Returns</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Care Guide</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">FAQ</a>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Services</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Cleaning &amp; Polishing</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Ring Resizing</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Valuation</a>
+        </div>
+        <div class="col-span-2 md:col-span-1 mt-10 md:mt-0">
+            <h5 class="font-headline-md text-[18px] text-primary mb-4">Newsletter</h5>
+            <p class="font-body-md text-on-surface-variant text-sm mb-4">Subscribe to receive exclusive collection updates.</p>
+            <div class="relative">
+                <input class="w-full bg-transparent border-b border-outline-variant focus:border-primary text-on-surface font-body-md py-2 px-0 outline-none transition-all" placeholder="Email Address" type="email"/>
+                <button class="absolute right-0 bottom-2 text-primary hover:translate-x-1 transition-transform">
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop mt-20 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center text-sm font-body-md text-on-surface-variant">
+        <p>© 2024 Aurelia Fine Jewellery. All Rights Reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0 font-label-caps text-[10px]">
+            <a class="hover:text-primary transition-colors" href="collection.html">Privacy Policy</a>
+            <a class="hover:text-primary transition-colors" href="collection.html">Terms of Service</a>
+            <a class="hover:text-primary transition-colors" href="collection.html">Accessibility</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Dynamic JS Scripts -->
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

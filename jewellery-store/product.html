@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AURELIA | Celestial Diamond Ring</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-surface-variant": "#4d4635",
+                    "on-tertiary-fixed": "#1b1d0e",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-error-container": "#93000a",
+                    "outline": "#7f7663",
+                    "on-tertiary": "#ffffff",
+                    "inverse-primary": "#e9c349",
+                    "tertiary-fixed": "#e4e4cc",
+                    "secondary-fixed": "#e5e2e1",
+                    "tertiary-fixed-dim": "#c8c8b0",
+                    "error": "#ba1a1a",
+                    "tertiary": "#5e604d",
+                    "on-tertiary-fixed-variant": "#474836",
+                    "surface-container-low": "#f3f3f3",
+                    "on-background": "#1a1c1c",
+                    "inverse-surface": "#2f3131",
+                    "on-primary-container": "#554300",
+                    "on-surface": "#1a1c1c",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#b4b49d",
+                    "on-secondary": "#ffffff",
+                    "on-secondary-container": "#636262",
+                    "primary-fixed": "#ffe088",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#e2e2e2",
+                    "outline-variant": "#d0c5af",
+                    "surface-container": "#eeeeee",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-secondary-fixed": "#1c1b1b",
+                    "on-primary": "#ffffff",
+                    "primary-fixed-dim": "#e9c349",
+                    "background": "#f9f9f9",
+                    "surface": "#f9f9f9",
+                    "primary-container": "#d4af37",
+                    "on-tertiary-container": "#454634",
+                    "on-primary-fixed": "#241a00",
+                    "surface-container-high": "#e8e8e8",
+                    "secondary": "#5f5e5e",
+                    "surface-tint": "#735c00",
+                    "on-secondary-fixed-variant": "#474746",
+                    "surface-bright": "#f9f9f9",
+                    "secondary-container": "#e2dfde",
+                    "surface-dim": "#dadada",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "inverse-on-surface": "#f0f1f1",
+                    "primary": "#735c00"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "margin-desktop": "64px",
+                    "unit": "8px",
+                    "margin-mobile": "20px",
+                    "gutter": "24px",
+                    "edge-margin-desktop": "64px",
+                    "edge-margin-mobile": "20px",
+                    "section-gap": "96px"
+            },
+            "fontFamily": {
+                    "body-lg": ["\"Source Serif 4\""],
+                    "display-lg": ["Playfair Display"],
+                    "label-sm": ["\"Source Sans 3\""],
+                    "label-caps": ["\"Source Sans 3\""],
+                    "body-md": ["\"Source Serif 4\""],
+                    "headline-md": ["Playfair Display"],
+                    "headline-lg": ["Playfair Display"],
+                    "display-lg-mobile": ["Playfair Display"],
+                    "price-display": ["\"Source Sans 3\""]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.2em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "display-lg-mobile": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "price-display": ["20px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+    <!-- Style Mappings -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body-md overflow-x-hidden">
+
+<!-- Standardized Header / TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-lowest/80 backdrop-blur-xl border-b border-outline-variant py-4 transition-all duration-300">
+    <div class="flex flex-col w-full max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+        <div class="flex items-center justify-between">
+            <!-- Mobile Menu hamburger icon -->
+            <button class="md:hidden text-primary header-menu-btn focus:outline-none">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            
+            <!-- Branding -->
+            <a href="index.html" class="font-display-lg text-[24px] md:text-headline-lg tracking-tighter text-primary cursor-pointer hover:scale-105 transition-transform duration-500">
+                AURELIA
+            </a>
+            
+            <!-- Navigation Links (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-all" href="collection.html">All Jewellery</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-gold" href="collection.html">Gold</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-diamond" href="collection.html">Diamond</a>
+                <a class="nav-link font-label-caps text-label-caps text-primary border-b border-primary pb-1" id="nav-earrings" href="collection.html">Earrings</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-rings" href="collection.html">Rings</a>
+                <a class="nav-link font-label-caps text-label-caps text-on-surface hover:text-primary transition-colors duration-500 pb-1" id="nav-pendants" href="collection.html">Pendants</a>
+            </nav>
+            
+            <!-- Actions -->
+            <div class="flex items-center space-x-6 text-on-surface">
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 header-search-btn">search</span>
+                <span class="relative material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110">
+                    favorite
+                    <span class="wishlist-badge hidden absolute -top-1.5 -right-1.5 bg-primary text-on-primary text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+                </span>
+                <span class="material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110">person</span>
+                <span class="relative material-symbols-outlined cursor-pointer hover:text-primary transition-all duration-500 ease-in-out hover:scale-110 header-cart-btn">
+                    shopping_bag
+                    <span class="cart-badge hidden absolute -top-1.5 -right-1.5 bg-primary text-on-primary text-[8px] font-bold rounded-full w-4 h-4 flex items-center justify-center">0</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="pt-24 md:pt-32">
+    <div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+        <!-- Breadcrumbs -->
+        <nav class="flex items-center space-x-2 mb-10 text-[10px] font-label-caps uppercase tracking-widest text-on-surface-variant">
+            <a class="hover:text-primary" href="index.html">Home</a>
+            <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+            <a class="hover:text-primary" href="collection.html">Fine Jewellery</a>
+            <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+            <a class="hover:text-primary" href="collection.html">Diamond Rings</a>
+            <span class="material-symbols-outlined text-[12px]">chevron_right</span>
+            <span class="text-primary font-bold">Celestial Aura Ring</span>
+        </nav>
+
+        <!-- Product Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-gutter">
+            <!-- Left: Gallery -->
+            <div class="lg:col-span-7 space-y-4">
+                <div class="relative aspect-[4/5] overflow-hidden bg-surface-container-low group product-image-container cursor-crosshair border border-outline-variant/20">
+                    <img id="main-product-image" alt="Luxury Diamond Ring" class="w-full h-full object-cover product-image-zoom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUUpyrDJxw5Xedi8SHw94uMFmqxf4YDvoNKbR0tlb3I5ffFjuTw4kOfdyDDrZUy2u7xasAhimLFUPTP1m5nTNi9dsS51Euttc0xQnSGzldMZsbXl7qwfmxRH__Mb1cdasJkCyiwtE9_lw1PlmF5gwBNqlg_PygXDrPNgFA1pWs6sFQAY9ZjjI1Mzwl5w1O0MJRMvHjWUJ7H-YPCHqo1GLb-x3-iaMH_N8O4CLYum8KFsfulJGWxd0zvLxlklTbX7Sbrz8KpkVD9lI"/>
+                    <!-- Floating Controls -->
+                    <div class="absolute bottom-6 right-6 flex flex-col space-y-3">
+                        <button class="w-12 h-12 bg-surface/90 backdrop-blur-md border border-outline-variant flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-on-primary transition-all focus:outline-none">
+                            <span class="material-symbols-outlined">zoom_in</span>
+                        </button>
+                        <button class="w-12 h-12 bg-surface/90 backdrop-blur-md border border-outline-variant flex items-center justify-center text-primary shadow-sm hover:bg-primary hover:text-on-primary transition-all focus:outline-none">
+                            <span class="material-symbols-outlined">360</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Thumbnails -->
+                <div class="grid grid-cols-4 gap-4">
+                    <div class="aspect-square bg-surface-container-highest border-2 border-primary overflow-hidden cursor-pointer">
+                        <img alt="Ring View 1" class="w-full h-full object-cover opacity-100 transition-opacity hover:opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEcq7LS7fwTlqNkOZ1CEmUli6I3finJfJcz4LHsHDdPUBW6DWFhWcTkgzh6wZw3zpRfU5lbYvJt2ExK_YOD_j6nbylxQI-mHvUgvz8nHKUSkZx1-aZV5wjpFKZev0hftGK1ZoKGzmN6Jzi7PIxy-nkvRW5xLFwA2TteWF-kahqYDYMRDrdHM_nbrwzvT_ZCW-LlZlLX0R2w2A3cLm6kYjD6KBKsdGVilu3JTVbZKhEDsj-Fui8n27CDokjmqCkisBX9_yZq1yJ-Yw"/>
+                    </div>
+                    <div class="aspect-square bg-surface-container-low border border-transparent hover:border-primary/50 overflow-hidden cursor-pointer">
+                        <img alt="Ring View 2" class="w-full h-full object-cover opacity-60 hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbUoWy3qA1RuMPY7sMfsTUP-uvppF0q4_WQkQZe78X6fwPIA4Pnj9TUb80Sl_HWZEiPKxGZgnp3VWe3sXm0hT7HIz2whYxTKLBQ4zeCdffEUNUgovTum-NzR5Dum1hgsRfpvc2D60mPDzh8xN7VsjagXwF7Trv0A0NSQwjOfW0jgJlb4_aYSJkaqgOsP_cdIpfiYpoZKZjvwv6ykSGUvc1SOPNjVc4IIpVcB8nynFYN6V5QQVxmQJnGwV-DF_-t1et6yWKnugM7Y0"/>
+                    </div>
+                    <div class="aspect-square bg-surface-container-low border border-transparent hover:border-primary/50 overflow-hidden cursor-pointer">
+                        <img alt="Ring View 3" class="w-full h-full object-cover opacity-60 hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPqzOEWetAR08-5icSYD5pYv2IoDPofz6qA8GS6XEGc0OEM1Gd7e78SB8UvRCIiF2l0BfQA5feC_J2HOYP48dXeckr3VsMDjyXRLLTJUrxz0nPetgLEsTVxQkHtgecGXVtyduHYEuiuFepuSgl5l_J-uAUDQdnZnXUnJcj1klMo73BkATXgujBdpPrQpNZsYf2A7rXzHlGbffBQAelfQ6q_SqZUdTldhFR9hySrCWnyHmHpaGYA2zhhkQrJ0rKLVO9_nDaFbxZ7LY"/>
+                    </div>
+                    <div class="aspect-square bg-surface-container-low border border-transparent hover:border-primary/50 overflow-hidden cursor-pointer">
+                        <img alt="Ring View 4" class="w-full h-full object-cover opacity-60 hover:opacity-100" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBflJA4qPEAX-ZZZBWkIPXjq59bZsDRC-Df3ZYoh_lgADvkMBug4elpDUxJg6AOUryUr3tJEiuRXgrzEgXm5QsLEy7_eIWcw9Nf6wPBxo5jsogW2B3IHYaSqUzTAH5R3qxlmRSF7HvyfgU1EFDvS6djlNHjrl32soKwvLDPR17-EDeveBVzqUCEGo-7TlfXh8bDLD0FHQsaqoaRfy_1w63Zxrqb-h181SomR-qTitB7oGEN6Y68p6g5SNoU-AO0IGzJ--Yv1jKxHLw"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div class="lg:col-span-5 lg:sticky lg:top-32 h-fit space-y-8">
+                <div>
+                    <span class="font-label-caps text-label-sm text-primary tracking-[0.4em] block mb-2">COLLECTION: CELESTIAL</span>
+                    <h1 class="font-headline-lg text-headline-lg text-on-surface mb-4">Celestial Aura Diamond Ring</h1>
+                    <div class="flex items-baseline space-x-4 mb-6">
+                        <span class="font-price-display text-[32px] text-primary font-semibold">$4,250.00</span>
+                        <span class="text-on-surface-variant text-sm line-through">$5,100.00</span>
+                    </div>
+                    <p class="text-on-surface-variant font-body-md leading-relaxed">
+                        An ethereal masterpiece crafted in 18k solid gold, featuring a 1.2-carat central solitaire diamond of exceptional clarity. Inspired by the alignment of stars.
+                    </p>
+                </div>
+
+                <!-- Options -->
+                <div class="space-y-6">
+                    <div>
+                        <label class="font-label-caps text-[10px] text-on-surface-variant mb-4 block">METAL PURITY</label>
+                        <div class="flex space-x-3">
+                            <button class="px-8 py-3 border-2 border-primary text-primary font-label-caps text-[11px] bg-primary/5 focus:outline-none">18K GOLD</button>
+                            <button class="px-8 py-3 border-2 border-outline-variant text-on-surface-variant font-label-caps text-[11px] hover:border-primary transition-colors focus:outline-none">14K GOLD</button>
+                            <button class="px-8 py-3 border-2 border-outline-variant text-on-surface-variant font-label-caps text-[11px] hover:border-primary transition-colors focus:outline-none">PLATINUM</button>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="font-label-caps text-[10px] text-on-surface-variant mb-4 block flex justify-between">
+                            RING SIZE <span class="size-guide-trigger cursor-pointer text-primary underline underline-offset-4 decoration-primary/30">SIZE GUIDE</span>
+                        </label>
+                        <div class="relative">
+                            <select id="p-ring-size" class="w-full bg-surface-container-low border-2 border-outline-variant p-4 text-on-surface font-body-md focus:border-primary focus:ring-0 outline-none appearance-none transition-all">
+                                <option>Select Size (US)</option>
+                                <option>5</option>
+                                <option>6</option>
+                                <option>7</option>
+                                <option>8</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stock Info -->
+                <div class="p-5 bg-surface-container border-l-4 border-primary space-y-2">
+                    <div class="flex items-center text-sm text-on-surface font-semibold">
+                        <span class="material-symbols-outlined text-primary text-base mr-3">check_circle</span>
+                        In Stock &amp; Ready to Ship
+                    </div>
+                    <div class="flex items-center text-sm text-on-surface-variant">
+                        <span class="material-symbols-outlined text-base mr-3">local_shipping</span>
+                        Estimated Delivery: Oct 24 - Oct 27
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="space-y-4 pt-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <button id="add-to-bag-btn" class="bg-primary text-on-primary font-label-caps h-14 tracking-[0.2em] hover:bg-primary-container transition-all flex items-center justify-center shadow-md focus:outline-none">
+                            ADD TO BAG
+                        </button>
+                        <button class="btn-gold-outline font-label-caps h-14 tracking-[0.2em] flex items-center justify-center shadow-sm focus:outline-none" onclick="window.location.href='collection.html'">
+                            BUY NOW
+                        </button>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="wishlist-toggle-btn flex-1 border-2 border-outline-variant font-label-caps h-12 text-[11px] text-on-surface-variant hover:border-primary hover:text-primary transition-all flex items-center justify-center group focus:outline-none">
+                            <span class="material-symbols-outlined mr-2 text-[18px]">favorite</span> WISHLIST
+                        </button>
+                        <button class="flex-1 border-2 border-outline-variant font-label-caps h-12 text-[11px] text-on-surface-variant hover:border-primary hover:text-primary transition-all flex items-center justify-center group focus:outline-none">
+                            <span class="material-symbols-outlined mr-2 text-[18px]">calendar_month</span> BOOK APPOINTMENT
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Social/Service -->
+                <div class="flex justify-between items-center pt-8 border-t border-outline-variant">
+                    <div class="flex space-x-6">
+                        <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">share</span>
+                        <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors">chat</span>
+                    </div>
+                    <div class="text-[11px] font-label-caps text-on-surface-variant flex items-center">
+                        REF: AU-8892-Z <span class="material-symbols-outlined text-[14px] ml-2 cursor-help">info</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Details & Specs Section -->
+        <section class="mt-section-gap py-20 bg-surface-container-low -mx-edge-margin-mobile md:-mx-edge-margin-desktop px-edge-margin-mobile md:px-edge-margin-desktop border-y border-outline-variant/30">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-container-max mx-auto w-full">
+                <div class="space-y-10">
+                    <h2 class="font-headline-md text-headline-md text-on-surface border-b border-primary/20 pb-4">Specifications</h2>
+                    <div class="grid grid-cols-2 gap-y-10 gap-x-8">
+                        <div>
+                            <p class="text-[10px] font-label-caps text-on-surface-variant mb-1 tracking-widest">METAL</p>
+                            <p class="text-on-surface font-semibold text-lg">18K Solid Yellow Gold</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-label-caps text-on-surface-variant mb-1 tracking-widest">TOTAL WEIGHT</p>
+                            <p class="text-on-surface font-semibold text-lg">4.2 Grams</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-label-caps text-on-surface-variant mb-1 tracking-widest">PRIMARY DIAMOND</p>
+                            <p class="text-on-surface font-semibold text-lg">Round Brilliant (1.2ct)</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-label-caps text-on-surface-variant mb-1 tracking-widest">CLARITY/COLOR</p>
+                            <p class="text-on-surface font-semibold text-lg">VVS1 / D Grade</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-10">
+                    <h2 class="font-headline-md text-headline-md text-on-surface border-b border-primary/20 pb-4">Style &amp; Heritage</h2>
+                    <div class="space-y-6">
+                        <p class="text-on-surface-variant font-body-md text-lg leading-relaxed">
+                            Each Aurelia piece comes with a GIA certification and a lifetime authenticity guarantee. Our diamonds are ethically sourced from conflict-free mines in Botswana, supporting local communities.
+                        </p>
+                        <a class="inline-flex items-center text-primary font-label-caps text-[11px] group tracking-widest font-bold" href="collection.html">
+                            EXPLORE THE STYLE GUIDE <span class="material-symbols-outlined ml-3 transition-transform group-hover:translate-x-2">arrow_forward</span>
+                        </a>
+                    </div>
+                    <div class="flex items-center space-x-12 pt-4">
+                        <div class="text-center group cursor-default">
+                            <span class="material-symbols-outlined text-primary text-5xl mb-3 transition-transform group-hover:scale-110 block">verified</span>
+                            <p class="text-[10px] font-label-caps text-on-surface-variant tracking-widest">GIA CERTIFIED</p>
+                        </div>
+                        <div class="text-center group cursor-default">
+                            <span class="material-symbols-outlined text-primary text-5xl mb-3 transition-transform group-hover:scale-110 block">auto_awesome</span>
+                            <p class="text-[10px] font-label-caps text-on-surface-variant tracking-widest">HAND-FINISHED</p>
+                        </div>
+                        <div class="text-center group cursor-default">
+                            <span class="material-symbols-outlined text-primary text-5xl mb-3 transition-transform group-hover:scale-110 block">eco</span>
+                            <p class="text-[10px] font-label-caps text-on-surface-variant tracking-widest">ETHICAL GOLD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="mt-section-gap mb-section-gap">
+            <div class="flex items-end justify-between mb-12">
+                <div>
+                    <span class="font-label-caps text-label-sm text-primary tracking-[0.4em] block mb-2">COMPLETE THE LOOK</span>
+                    <h2 class="font-headline-md text-headline-md text-on-surface">You May Also Like</h2>
+                </div>
+                <div class="flex space-x-3">
+                    <button class="w-14 h-14 border-2 border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-all rounded-full focus:outline-none">
+                        <span class="material-symbols-outlined">west</span>
+                    </button>
+                    <button class="w-14 h-14 border-2 border-outline-variant flex items-center justify-center hover:border-primary hover:text-primary transition-all rounded-full focus:outline-none">
+                        <span class="material-symbols-outlined">east</span>
+                    </button>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+                <!-- Product Card 1 -->
+                <div class="luxury-card group cursor-pointer border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
+                    <div class="relative aspect-square overflow-hidden mb-6 bg-surface-container">
+                        <img alt="Celestial Studs" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMTQX0qXjLkzNWrIf1DaLD6BF5kLznQ_b375gw3Gtw0JG9fheX2eoL0Wh_-gTFrOg567hHt44pr8I8fwlfV8uHOmtSqObdXT-8h4bmnnx3og9bjtmV8NwbaHF4_0mmCdqiOGHXkxnwwLNDda6u3fKnLom0S88ZwX875YOjAbfR4zU8k19RTr1wEryrzZddisBzkCI1li07F-CoQm4UQOpsb8yLT7t0D1J0Nn3J412Ka0YLUWKBH4xxQ4LEmoPXwfHrrn-b0RJyjKk"/>
+                        <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">favorite</span>
+                        </button>
+                    </div>
+                    <p class="font-label-caps text-[11px] text-on-surface-variant mb-1 tracking-widest">EARRINGS</p>
+                    <h3 class="font-headline-md text-lg mb-2 text-on-surface hover:text-primary"><a href="product.html">Celestial Studs</a></h3>
+                    <p class="font-price-display text-primary font-semibold">$1,850.00</p>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="luxury-card group cursor-pointer border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
+                    <div class="relative aspect-square overflow-hidden mb-6 bg-surface-container">
+                        <img alt="Eternal Orbit Pendant" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjQIt8kvuWIog--KFWVKBbBYnYQoKNt7D1NKk_4kv6kTkolymedDyftHcauEzONQCxVzgGUIg3c3t1-ROwT_c01r3pDaGfKZuESXZEzSyisG3O6BHQsEugKVlKCF_bs416FBT3KO_X2V_t_N7zZE0HWGquOstRwx6kf7uSqZ07MclSptnVZHn5n9DZH3mCxbgYAncJxpAYc57gojPmrnu4SCZD75tXSalovIZ9yuw3A_w6HlkXEDiRkRpO_KPF_8UEz6_UpLJ_5ME"/>
+                        <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">favorite</span>
+                        </button>
+                    </div>
+                    <p class="font-label-caps text-[11px] text-on-surface-variant mb-1 tracking-widest">NECKLACE</p>
+                    <h3 class="font-headline-md text-lg mb-2 text-on-surface hover:text-primary"><a href="product.html">Eternal Orbit Pendant</a></h3>
+                    <p class="font-price-display text-primary font-semibold">$2,100.00</p>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="luxury-card group cursor-pointer border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
+                    <div class="relative aspect-square overflow-hidden mb-6 bg-surface-container">
+                        <img alt="Nova Diamond Band" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHzBQPDx1sclnHf-XBky3jjfTs8HsHsIO3Tm_hWKDH6dHkfLAPp7vRIb111v4u4e9emTDfVQAAsek89QXEZQS_vfiDaDbD5oucIwi3S_OV09xIx-TwFIJmP6GnZNnwUG4zdbGdZv4epZC3TAOTm2CaaGM238L0UEI-bygVGzCbRgmq7rgYg0GVHRVQtE_voe03N65BnsWFdIUURYES84b160GcOgw_Shwa9TWS8V9t5ytKyTV3lBTAAl0Z5OYc2wWD31ecTaMbxUc"/>
+                        <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">favorite</span>
+                        </button>
+                    </div>
+                    <p class="font-label-caps text-[11px] text-on-surface-variant mb-1 tracking-widest">RINGS</p>
+                    <h3 class="font-headline-md text-lg mb-2 text-on-surface hover:text-primary"><a href="product.html">Nova Diamond Band</a></h3>
+                    <p class="font-price-display text-primary font-semibold">$1,250.00</p>
+                </div>
+                <!-- Product Card 4 -->
+                <div class="luxury-card group cursor-pointer border border-transparent hover:border-primary/20 p-1 transition-all duration-500">
+                    <div class="relative aspect-square overflow-hidden mb-6 bg-surface-container">
+                        <img alt="Star-Dust Cuff" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq3UjiHbmrn0virizZxxKZd2TbDBG49hwcBgSQKW9lJY78829HdhW1e8MRLN-WIkyXCn2aKDV6ZfICsIpM5AtKiX_HREHAdXFes4LJUjIv_be43qEsbJh9MVbP1iyQqpX0zNChdURIquPrA-XU-syvmYef_XXSowyjJn8pypyvvWNr0GPwP_5Qul3HEyU3Y7xTp1JUt9f-KHG8Q85yL4LBG2IRZ3hpO8Ab09l9mzkQI5kfaFDlfK7NLk5nLWwjKOha2KVDHvb1TWA"/>
+                        <button class="wishlist-toggle-btn absolute top-4 right-4 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-white/85 p-1.5 rounded-full border border-outline-variant/30 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-sm">favorite</span>
+                        </button>
+                    </div>
+                    <p class="font-label-caps text-[11px] text-on-surface-variant mb-1 tracking-widest">BRACELETS</p>
+                    <h3 class="font-headline-md text-lg mb-2 text-on-surface hover:text-primary"><a href="product.html">Star-Dust Cuff</a></h3>
+                    <p class="font-price-display text-primary font-semibold">$3,400.00</p>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<!-- Standardized Footer -->
+<footer class="bg-surface-container-low w-full pt-20 pb-10 border-t border-outline-variant/30">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-gutter max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop">
+        <div class="col-span-2 md:col-span-1 mb-10 md:mb-0">
+            <div class="font-display-lg text-headline-lg text-primary mb-6">AURELIA</div>
+            <p class="font-body-md text-on-surface-variant text-sm mb-6">Elevating the human spirit through the art of fine jewelry since 1924.</p>
+            <div class="flex space-x-4">
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="public">public</span>
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="camera">camera</span>
+                <span class="material-symbols-outlined text-on-surface-variant hover:text-primary cursor-pointer transition-colors" data-icon="share">share</span>
+            </div>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Company</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Our Story</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Craftsmanship</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Careers</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Ethics</a>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Customer Support</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Contact Us</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Shipping &amp; Returns</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Care Guide</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">FAQ</a>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <h5 class="font-headline-md text-[18px] text-primary mb-2">Services</h5>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Cleaning &amp; Polishing</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Ring Resizing</a>
+            <a class="font-body-md text-on-surface-variant hover:text-primary transition-colors text-sm" href="collection.html">Valuation</a>
+        </div>
+        <div class="col-span-2 md:col-span-1 mt-10 md:mt-0">
+            <h5 class="font-headline-md text-[18px] text-primary mb-4">Newsletter</h5>
+            <p class="font-body-md text-on-surface-variant text-sm mb-4">Subscribe to receive exclusive collection updates.</p>
+            <div class="relative">
+                <input class="w-full bg-transparent border-b border-outline-variant focus:border-primary text-on-surface font-body-md py-2 px-0 outline-none transition-all" placeholder="Email Address" type="email"/>
+                <button class="absolute right-0 bottom-2 text-primary hover:translate-x-1 transition-transform">
+                    <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-container-max mx-auto px-edge-margin-mobile md:px-edge-margin-desktop mt-20 pt-8 border-t border-outline-variant/20 flex flex-col md:flex-row justify-between items-center text-sm font-body-md text-on-surface-variant">
+        <p>© 2024 Aurelia Fine Jewellery. All Rights Reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0 font-label-caps text-[10px]">
+            <a class="hover:text-primary transition-colors" href="collection.html">Privacy Policy</a>
+            <a class="hover:text-primary transition-colors" href="collection.html">Terms of Service</a>
+            <a class="hover:text-primary transition-colors" href="collection.html">Accessibility</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Floating Action Button for Mobile Consultation -->
+<button class="fixed bottom-8 right-8 w-16 h-16 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center hover:scale-110 active:scale-95 transition-transform z-40 md:hidden focus:outline-none size-guide-trigger">
+    <span class="material-symbols-outlined">support_agent</span>
+</button>
+
+<!-- Dynamic JS Scripts -->
+<script src="js/main.js"></script>
+<script src="js/navigation.js"></script>
+<script src="js/animations.js"></script>
+
+<script>
+    // Specific Add to Bag logic for product page
+    document.addEventListener('DOMContentLoaded', () => {
+        const addBtn = document.getElementById('add-to-bag-btn');
+        if (addBtn) {
+            addBtn.addEventListener('click', () => {
+                const ringSize = document.getElementById('p-ring-size').value;
+                const sizeText = ringSize !== 'Select Size (US)' ? ` • SIZE ${ringSize}` : '';
+                
+                const item = {
+                    name: 'Celestial Aura Ring',
+                    price: '$4,250.00',
+                    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAUUpyrDJxw5Xedi8SHw94uMFmqxf4YDvoNKbR0tlb3I5ffFjuTw4kOfdyDDrZUy2u7xasAhimLFUPTP1m5nTNi9dsS51Euttc0xQnSGzldMZsbXl7qwfmxRH__Mb1cdasJkCyiwtE9_lw1PlmF5gwBNqlg_PygXDrPNgFA1pWs6sFQAY9ZjjI1Mzwl5w1O0MJRMvHjWUJ7H-YPCHqo1GLb-x3-iaMH_N8O4CLYum8KFsfulJGWxd0zvLxlklTbX7Sbrz8KpkVD9lI',
+                    meta: `18K GOLD • 4.2G${sizeText}`
+                };
+                
+                if (window.AureliaState) {
+                    window.AureliaState.addToCart(item);
+                }
+            });
+        }
+    });
+</script>
+</body>
+</html>
